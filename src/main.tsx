@@ -1,10 +1,38 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { Container, Game, canvas } from "@drincs/pixi-vn";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RouterProvider } from "@tanstack/react-router";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BACKGROUND_COLOR, HEIGHT, WIDTH } from "./constants";
+import "./index.css";
+import { router } from "./router";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const body = document.body;
+if (!body) {
+    throw new Error("body element not found");
+}
+
+Game.init(body, {
+    width: WIDTH,
+    height: HEIGHT,
+    backgroundColor: BACKGROUND_COLOR,
+}).then(() => {
+    canvas.layers.add("ui", new Container());
+
+    const root = document.getElementById("root");
+    if (!root) {
+        throw new Error("root element not found");
+    }
+
+    const htmlLayer = canvas.htmlLayers.add("ui", root);
+    const reactRoot = createRoot(htmlLayer);
+    const queryClient = new QueryClient();
+
+    reactRoot.render(
+        <StrictMode>
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+            </QueryClientProvider>
+        </StrictMode>,
+    );
+});
