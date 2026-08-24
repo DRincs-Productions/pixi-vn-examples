@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Image } from "@/components/ui/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -15,10 +15,7 @@ export default function NarrationScreen() {
                 <ChoiceMenu />
             </div>
             {text && (
-                <Card
-                    onClick={(e) => e.stopPropagation()}
-                    className="max-h-[45%] shrink-0 cursor-default bg-card/95 backdrop-blur"
-                >
+                <Card className="max-h-[45%] shrink-0 cursor-default bg-card/95 backdrop-blur">
                     <CardContent className="flex min-h-0 gap-3">
                         {character?.icon && (
                             <Avatar size="lg" className="shrink-0">
@@ -27,7 +24,6 @@ export default function NarrationScreen() {
                                     alt=""
                                     className="aspect-square size-full rounded-full object-cover"
                                 />
-                                <AvatarFallback>{character?.name?.[0]}</AvatarFallback>
                             </Avatar>
                         )}
                         <div className="flex min-w-0 flex-1 flex-col gap-1">
