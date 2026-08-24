@@ -1,18 +1,18 @@
 {
   "bundles": [
     {
-      "name": "performance",
+      "name": "images",
       "assets": [
         {
           "alias": [
-            "performance_eggHead",
+            "images_eggHead",
             "eggHead"
           ],
           "src": [
-            "performance/eggHead-ObxXuA.png",
-            "performance/eggHead-kT0FWQ@0.5x.webp",
-            "performance/eggHead-jFdNYg.webp",
-            "performance/eggHead-EB26sQ@0.5x.png"
+            "images/eggHead-ObxXuA.png",
+            "images/eggHead-kT0FWQ@0.5x.webp",
+            "images/eggHead-jFdNYg.webp",
+            "images/eggHead-EB26sQ@0.5x.png"
           ],
           "data": {
             "tags": {}
