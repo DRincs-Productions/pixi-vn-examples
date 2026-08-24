@@ -1,11 +1,13 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { Image } from "@/components/ui/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useQueryDialogue } from "@/hooks/useQueryInterface";
 import ChoiceMenu from "./ChoiceMenu";
 
 export default function NarrationScreen() {
     const { data: { text, character } = {} } = useQueryDialogue();
+    const characterName = `${character?.name ?? ""} ${character?.surname ?? ""}`.trim();
 
     return (
         <div className="absolute inset-0 flex flex-col gap-3 p-4">
@@ -20,7 +22,11 @@ export default function NarrationScreen() {
                     <CardContent className="flex min-h-0 gap-3">
                         {character?.icon && (
                             <Avatar size="lg" className="shrink-0">
-                                <AvatarImage src={character.icon} alt="" />
+                                <Image
+                                    src={character.icon}
+                                    alt=""
+                                    className="aspect-square size-full rounded-full object-cover"
+                                />
                                 <AvatarFallback>{character?.name?.[0]}</AvatarFallback>
                             </Avatar>
                         )}
@@ -30,7 +36,7 @@ export default function NarrationScreen() {
                                     className="font-heading text-sm font-medium"
                                     style={{ color: character.color }}
                                 >
-                                    {character.name} {character.surname}
+                                    {characterName}
                                 </span>
                             )}
                             <ScrollArea className="max-h-24">

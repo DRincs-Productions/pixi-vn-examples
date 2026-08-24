@@ -21,7 +21,7 @@ export const performanceRoute = createRoute({
     path: "/performance",
     loader: async ({ context }) => {
         canvas.app.renderer.resize(1920, 1080);
-        await Assets.loadBundle("performance");
+        await Assets.loadBundle("images");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
             await context.queryClient.invalidateQueries();
@@ -80,7 +80,7 @@ export class TintingTestTicker extends TickerBase<TintingTestTickerArgs> {
     }
 }
 
-export const startLabel = newLabel("start", [
+export const startLabel = newLabel("performance", [
     async () => {
         const totalDudes = 300;
 

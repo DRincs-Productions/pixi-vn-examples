@@ -1,11 +1,12 @@
 import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
+import { currentDialogueRoute } from "./routes/current-dialogue";
 import { performanceRoute } from "./routes/performance";
 import { rootRoute } from "./routes/__root";
 
 export const queryClient = new QueryClient();
 
-const routeTree = rootRoute.addChildren([performanceRoute]);
+const routeTree = rootRoute.addChildren([performanceRoute, currentDialogueRoute]);
 
 export const router = createRouter({
     routeTree,
