@@ -1,0 +1,24 @@
+{
+  "bundles": [
+    {
+      "name": "performance",
+      "assets": [
+        {
+          "alias": [
+            "performance_eggHead",
+            "eggHead"
+          ],
+          "src": [
+            "performance/eggHead-ObxXuA.png",
+            "performance/eggHead-kT0FWQ@0.5x.webp",
+            "performance/eggHead-jFdNYg.webp",
+            "performance/eggHead-EB26sQ@0.5x.png"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    }
+  ]
+}

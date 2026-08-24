@@ -27,6 +27,12 @@ When adding a new example:
 - Give it a `start` label (and any other labels it needs).
 - Wire up a `Game.onEnd` handler for that example that restarts it via the `start` label.
 
+## Assets: anime style
+
+Local assets live under `src/assets/<example>/` (one folder per example, matching its route — AssetPack groups bundles by top-level folder, see `.assetpack.ts`).
+
+Whenever an image asset needs to be generated for an example, it **must be generated in anime style** (matching Pixi'VN's focus on story-driven games / visual novels), rather than a generic/realistic/other-style illustration.
+
 ## UI components: always use shadcn, never hand-roll
 
 This project uses shadcn (see `components.json`). Whenever a UI component is needed:

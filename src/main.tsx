@@ -1,11 +1,12 @@
-import { Container, Game, canvas } from "@drincs/pixi-vn";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Assets, Container, Game, canvas } from "@drincs/pixi-vn";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { manifest } from "./assets";
 import { BACKGROUND_COLOR, HEIGHT, WIDTH } from "./constants";
 import "./index.css";
-import { router } from "./router";
+import { queryClient, router } from "./router";
 
 const body = document.body;
 if (!body) {
@@ -16,8 +17,9 @@ Game.init(body, {
     width: WIDTH,
     height: HEIGHT,
     backgroundColor: BACKGROUND_COLOR,
-}).then(() => {
+}).then(async () => {
     canvas.layers.add("ui", new Container());
+    await Assets.init({ manifest, basePath: "/assets/" });
 
     const root = document.getElementById("root");
     if (!root) {
@@ -26,7 +28,6 @@ Game.init(body, {
 
     const htmlLayer = canvas.htmlLayers.add("ui", root);
     const reactRoot = createRoot(htmlLayer);
-    const queryClient = new QueryClient();
 
     reactRoot.render(
         <StrictMode>
