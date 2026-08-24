@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: out
-          path: out
+          path: dist
 
   deploy:
     name: Deploy
