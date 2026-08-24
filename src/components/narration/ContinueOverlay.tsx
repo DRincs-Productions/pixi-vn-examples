@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { useState } from "react";
 import useNarrationFunctions from "@/hooks/useNarrationFunctions";
 import { useQueryCanGoNext } from "@/hooks/useQueryInterface";
-import { cn } from "@/lib/utils";
 
 export default function ContinueOverlay({ children }: { children: ReactNode }) {
     const { data: canGoNext = false } = useQueryCanGoNext();
@@ -18,10 +17,7 @@ export default function ContinueOverlay({ children }: { children: ReactNode }) {
                 setLoading(true);
                 goNext().finally(() => setLoading(false));
             }}
-            className={cn(
-                "pointer-events-auto relative size-full",
-                canGoNext && !loading && "cursor-pointer",
-            )}
+            className="pointer-events-auto relative size-full"
         >
             {children}
         </div>
