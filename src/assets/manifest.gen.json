@@ -1,8 +1,69 @@
 {
   "bundles": [
     {
+      "name": "audio",
+      "assets": [
+        {
+          "alias": [
+            "audio_bgm_cheerful",
+            "bgm_cheerful"
+          ],
+          "src": [
+            "audio/bgm_cheerful-Uy6Ktw.mp3",
+            "audio/bgm_cheerful-8IbhSA.ogg"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio_sfx_whoosh",
+            "sfx_whoosh"
+          ],
+          "src": [
+            "audio/sfx_whoosh-S-MR4g.mp3",
+            "audio/sfx_whoosh-GKWcjA.ogg"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    },
+    {
       "name": "images",
       "assets": [
+        {
+          "alias": [
+            "images_bg_grass",
+            "bg_grass"
+          ],
+          "src": [
+            "images/bg_grass-wSychg.jpg",
+            "images/bg_grass-WFEwGg@0.5x.webp",
+            "images/bg_grass-ak7N-Q.webp",
+            "images/bg_grass-0SvHuQ@0.5x.jpg"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_bunny",
+            "bunny"
+          ],
+          "src": [
+            "images/bunny-zWnV.png",
+            "images/bunny-MsYDww@0.5x.webp",
+            "images/bunny-L5fyhg@0.5x.png",
+            "images/bunny-3BQJVA.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
         {
           "alias": [
             "images_eggHead",
@@ -13,6 +74,122 @@
             "images/eggHead-kT0FWQ@0.5x.webp",
             "images/eggHead-jFdNYg.webp",
             "images/eggHead-EB26sQ@0.5x.png"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_flowerTop",
+            "flowerTop"
+          ],
+          "src": [
+            "images/flowerTop-zsXLVg@0.5x.png",
+            "images/flowerTop-MKQgQw.png",
+            "images/flowerTop-LAZZiw.webp",
+            "images/flowerTop-1Sok_w@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_helmlok",
+            "helmlok"
+          ],
+          "src": [
+            "images/helmlok-zPrfKA@0.5x.png",
+            "images/helmlok-VqzrpQ.webp",
+            "images/helmlok-vkNTTA.png",
+            "images/helmlok-5TQZnw@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_m01-body",
+            "m01-body"
+          ],
+          "src": [
+            "images/m01-body-P5r2Ag.webp",
+            "images/m01-body-2if9QQ@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_m01-eyes-smile",
+            "m01-eyes-smile"
+          ],
+          "src": [
+            "images/m01-eyes-smile-nM_xDg@0.5x.webp",
+            "images/m01-eyes-smile-2SBoUA.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_m01-mouth-smile00",
+            "m01-mouth-smile00"
+          ],
+          "src": [
+            "images/m01-mouth-smile00-senCNQ.webp",
+            "images/m01-mouth-smile00-9HgaWg@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_panda",
+            "panda"
+          ],
+          "src": [
+            "images/panda-ZoyNsg@0.5x.png",
+            "images/panda-P8duYg.webp",
+            "images/panda-Ofinxg@0.5x.webp",
+            "images/panda-HJF9Ow.png"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_skully",
+            "skully"
+          ],
+          "src": [
+            "images/skully-wKmYhg.png",
+            "images/skully-K0VbUg.webp",
+            "images/skully-JTFnFA@0.5x.png",
+            "images/skully-FtdsAw@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    },
+    {
+      "name": "videos",
+      "assets": [
+        {
+          "alias": [
+            "videos_video",
+            "video"
+          ],
+          "src": [
+            "videos/video-PhuHpg.mp4"
           ],
           "data": {
             "tags": {}

@@ -11,11 +11,11 @@ import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
-import { rootRoute } from "./__root";
+import { rootRoute } from "../__root";
 
 export const currentDialogueRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/current-dialogue",
+    path: "/narration/current-dialogue",
     loader: async ({ context }) => {
         await Assets.loadBundle("images");
         Game.onEnd(async () => {
@@ -45,7 +45,7 @@ export const eggHead = new CharacterBaseModel("egg-head", {
 });
 RegisteredCharacters.add([eggHead]);
 
-export const startLabel = newLabel("current-dialogue", [
+export const startLabel = newLabel("narration/current-dialogue", [
     () => {
         // in this example, there is no character with id 'Alice'
         // so when you get the current dialogue, the character is a fake character with the name 'Alice'

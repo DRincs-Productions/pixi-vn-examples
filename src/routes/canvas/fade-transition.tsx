@@ -1,15 +1,16 @@
-import { Game, narration, newLabel } from "@drincs/pixi-vn";
+import { Assets, Game, newLabel, removeWithFade, showWithFade } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
-import { rootRoute } from "./__root";
+import { rootRoute } from "../__root";
 
-export const dialogueGlueRoute = createRoute({
+export const fadeTransitionRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/dialogue-glue",
+    path: "/canvas/fade-transition",
     loader: async ({ context }) => {
+        await Assets.loadBundle("images");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
             await context.queryClient.invalidateQueries();
@@ -28,13 +29,16 @@ export const dialogueGlueRoute = createRoute({
     ),
 });
 
-export const startLabel = newLabel("dialogue-glue", [
-    () => {
-        narration.dialogue = "Hello, my name is Alice and ...";
+export const startLabel = newLabel("canvas/fade-transition", [
+    async () => {
+        await showWithFade("alien", "eggHead", { duration: 5 });
+        await showWithFade("human", {
+            value: ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"],
+            options: { scale: 0.5, xAlign: 0.7 },
+        });
     },
-    () => {
-        // "glue" appends the next dialogue to the current one instead of replacing it
-        narration.dialogGlue = true;
-        narration.dialogue = "I am a character in this game.";
+    async () => {
+        await showWithFade("alien", "flowerTop");
+        removeWithFade("human");
     },
 ]);

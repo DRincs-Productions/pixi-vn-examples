@@ -14,11 +14,11 @@ import {
     type TickerValue,
 } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
-import { rootRoute } from "./__root";
+import { rootRoute } from "../__root";
 
 export const performanceRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/performance",
+    path: "/canvas/performance",
     loader: async ({ context }) => {
         canvas.app.renderer.resize(1920, 1080);
         await Assets.loadBundle("images");
@@ -80,7 +80,7 @@ export class TintingTestTicker extends TickerBase<TintingTestTickerArgs> {
     }
 }
 
-export const startLabel = newLabel("performance", [
+export const startLabel = newLabel("canvas/performance", [
     async () => {
         const totalDudes = 300;
 
