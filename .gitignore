@@ -24,3 +24,5 @@ public/assets
 *.njsproj
 *.sln
 *.sw?
+
+package-lock.json
