@@ -9,8 +9,8 @@
             "bgm_cheerful"
           ],
           "src": [
-            "audio/bgm_cheerful-Uy6Ktw.mp3",
-            "audio/bgm_cheerful-8IbhSA.ogg"
+            "audio/bgm_cheerful-XtqZqw.ogg",
+            "audio/bgm_cheerful-Uy6Ktw.mp3"
           ],
           "data": {
             "tags": {}
@@ -22,8 +22,8 @@
             "sfx_whoosh"
           ],
           "src": [
-            "audio/sfx_whoosh-S-MR4g.mp3",
-            "audio/sfx_whoosh-GKWcjA.ogg"
+            "audio/sfx_whoosh-V3dvPA.ogg",
+            "audio/sfx_whoosh-S-MR4g.mp3"
           ],
           "data": {
             "tags": {}

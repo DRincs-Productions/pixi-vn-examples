@@ -1,3 +1,7 @@
+import BackButton from "@/components/narration/BackButton";
+import ContinueOverlay from "@/components/narration/ContinueOverlay";
+import NarrationScreen from "@/components/narration/NarrationScreen";
+import TextInputDialog from "@/components/narration/TextInputDialog";
 import {
     Assets,
     canvas,
@@ -7,16 +11,13 @@ import {
     showImageContainer,
 } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
-import BackButton from "@/components/narration/BackButton";
-import ContinueOverlay from "@/components/narration/ContinueOverlay";
-import NarrationScreen from "@/components/narration/NarrationScreen";
-import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
 export const showImageContainerRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/show-image-container",
     loader: async ({ context }) => {
+        canvas.app.renderer.resize(1920, 1080);
         await Assets.loadBundle("images");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
