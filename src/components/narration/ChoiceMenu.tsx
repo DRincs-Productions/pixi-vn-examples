@@ -13,7 +13,7 @@ export default function ChoiceMenu() {
     return (
         <div
             onClick={(e) => e.stopPropagation()}
-            className="flex size-full flex-col items-center justify-center gap-2 overflow-auto p-2"
+            className="flex size-full flex-col items-center justify-[safe_center] gap-2 overflow-auto p-2"
         >
             {menu.map((item) => (
                 <Button

@@ -15,8 +15,11 @@ export default function NarrationScreen() {
                 <ChoiceMenu />
             </div>
             {text && (
-                <Card className="h-[45%] shrink-0 rounded-[16px_16px_0_0] bg-card/95 backdrop-blur">
-                    <CardContent className="flex min-h-0 flex-1 gap-3 px-3">
+                <Card
+                    size="sm"
+                    className="h-[45%] shrink-0 rounded-[16px_16px_0_0] bg-card/95 pb-1 backdrop-blur"
+                >
+                    <CardContent className="flex min-h-0 flex-1 gap-3 px-2">
                         {character?.icon && (
                             <Avatar size="lg" className="shrink-0">
                                 <Image
