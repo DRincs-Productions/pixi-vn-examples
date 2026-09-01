@@ -1,6 +1,9 @@
 import { Assets, Container, Game, canvas } from "@drincs/pixi-vn";
+import { Live2DPlugin } from "@drincs/pixi-vn-live2d/core";
+import "@drincs/pixi-vn-spine";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";
+import { extensions } from "pixi.js";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { manifest } from "./assets";
@@ -12,6 +15,8 @@ const body = document.body;
 if (!body) {
     throw new Error("body element not found");
 }
+
+extensions.add(Live2DPlugin);
 
 Game.init(body, {
     width: WIDTH,

@@ -29,6 +29,17 @@ import { textCanvasStyleRoute } from "./routes/canvas/text-canvas-style";
 import { zoomRoute } from "./routes/canvas/zoom";
 import { zoominTransitionRoute } from "./routes/canvas/zoomin-transition";
 import { choiceMenusRoute } from "./routes/narration/choice-menus";
+import { live2dExpressionRoute } from "./routes/live2d/expression";
+import { live2dMotionRoute } from "./routes/live2d/motion";
+import { live2dMotionJsRoute } from "./routes/live2d/motion-js";
+import { live2dShowRoute } from "./routes/live2d/show";
+import { live2dStopMotionsRoute } from "./routes/live2d/stop-motions";
+import { spineAnimationRoute } from "./routes/spine/animation";
+import { spineAnimationSequenceRoute } from "./routes/spine/animation-sequence";
+import { spineClearTracksRoute } from "./routes/spine/clear-tracks";
+import { spineIdleRoute } from "./routes/spine/idle";
+import { spineMotionRoute } from "./routes/spine/motion";
+import { spineSkinRoute } from "./routes/spine/skin";
 import { choicesAlreadyMadeRoute } from "./routes/narration/choices-already-made";
 import { currentDialogueRoute } from "./routes/narration/current-dialogue";
 import { dialogueGlueRoute } from "./routes/narration/dialogue-glue";
@@ -89,6 +100,19 @@ const routeTree = rootRoute.addChildren([
     videoSpriteRestartRoute,
     // sound
     soundRoute,
+    // spine
+    spineIdleRoute,
+    spineSkinRoute,
+    spineAnimationRoute,
+    spineMotionRoute,
+    spineAnimationSequenceRoute,
+    spineClearTracksRoute,
+    // live2d
+    live2dShowRoute,
+    live2dMotionRoute,
+    live2dExpressionRoute,
+    live2dMotionJsRoute,
+    live2dStopMotionsRoute,
 ]);
 
 export const router = createRouter({
