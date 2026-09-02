@@ -29,6 +29,24 @@ import { textCanvasStyleRoute } from "./routes/canvas/text-canvas-style";
 import { zoomRoute } from "./routes/canvas/zoom";
 import { zoominTransitionRoute } from "./routes/canvas/zoomin-transition";
 import { choiceMenusRoute } from "./routes/narration/choice-menus";
+import { inkCanvasBasicRoute } from "./routes/ink/canvas/basic";
+import { inkShowComponentRoute } from "./routes/ink/canvas/show-component";
+import { inkShowContainerRoute } from "./routes/ink/canvas/show-container";
+import { inkCharacterDialogueTextRoute } from "./routes/ink/character/dialogue-text";
+import { inkCharacterDialogueRoute } from "./routes/ink/character/dialogue";
+import { inkCharacterEditRoute } from "./routes/ink/character/edit";
+import { inkCharacterEmotionsRoute } from "./routes/ink/character/emotions";
+import { inkGettingStartedRoute } from "./routes/ink/getting-started";
+import { inkInputRoute } from "./routes/ink/input";
+import { inkCssRoute } from "./routes/ink/markup/css";
+import { inkMarkdownAdvancedRoute } from "./routes/ink/markup/markdown-advanced";
+import { inkMarkdownRoute } from "./routes/ink/markup/markdown";
+import { inkNewLinesRoute } from "./routes/ink/markup/new-lines";
+import { inkCallRoute } from "./routes/ink/narration/call";
+import { inkContinueRoute } from "./routes/ink/narration/continue";
+import { inkJumpRoute } from "./routes/ink/narration/jump";
+import { inkPauseRoute } from "./routes/ink/narration/pause";
+import { inkSoundRoute } from "./routes/ink/sound";
 import { live2dExpressionRoute } from "./routes/live2d/expression";
 import { live2dMotionRoute } from "./routes/live2d/motion";
 import { live2dMotionJsRoute } from "./routes/live2d/motion-js";
@@ -116,6 +134,25 @@ const routeTree = rootRoute.addChildren([
     live2dStopMotionsRoute,
     // minigame
     minigameSnakeRoute,
+    // ink
+    inkGettingStartedRoute,
+    inkCharacterDialogueRoute,
+    inkCharacterDialogueTextRoute,
+    inkCharacterEditRoute,
+    inkCharacterEmotionsRoute,
+    inkJumpRoute,
+    inkCallRoute,
+    inkPauseRoute,
+    inkInputRoute,
+    inkContinueRoute,
+    inkNewLinesRoute,
+    inkMarkdownRoute,
+    inkMarkdownAdvancedRoute,
+    inkCssRoute,
+    inkShowComponentRoute,
+    inkShowContainerRoute,
+    inkCanvasBasicRoute,
+    inkSoundRoute,
 ]);
 
 export const router = createRouter({

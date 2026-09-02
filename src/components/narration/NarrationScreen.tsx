@@ -1,3 +1,6 @@
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import { Avatar } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Image } from "@/components/ui/image";
@@ -39,7 +42,14 @@ export default function NarrationScreen() {
                                 </span>
                             )}
                             <ScrollArea className="min-h-0 flex-1">
-                                <p className="pr-2 text-sm text-card-foreground">{text}</p>
+                                <div className="prose prose-sm dark:prose-invert max-w-none pr-2 text-sm text-card-foreground">
+                                    <Markdown
+                                        remarkPlugins={[remarkGfm]}
+                                        rehypePlugins={[rehypeRaw]}
+                                    >
+                                        {text}
+                                    </Markdown>
+                                </div>
                             </ScrollArea>
                         </div>
                     </CardContent>

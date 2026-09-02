@@ -96,6 +96,84 @@
         },
         {
           "alias": [
+            "images_fm01-body",
+            "fm01-body"
+          ],
+          "src": [
+            "images/fm01-body-7sB0Cw.webp",
+            "images/fm01-body-0KaG6A@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_fm01-eyes",
+            "fm01-eyes"
+          ],
+          "src": [
+            "images/fm01-eyes-s4VrwQ@0.5x.webp",
+            "images/fm01-eyes-ivLU.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_fm01-mouth",
+            "fm01-mouth"
+          ],
+          "src": [
+            "images/fm01-mouth-qO7x9g.webp",
+            "images/fm01-mouth-jFBStw@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_fm02-body",
+            "fm02-body"
+          ],
+          "src": [
+            "images/fm02-body-zhdX6A.webp",
+            "images/fm02-body-2de0ew@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_fm02-eyes",
+            "fm02-eyes"
+          ],
+          "src": [
+            "images/fm02-eyes-UZzjag.webp",
+            "images/fm02-eyes-70JWrQ@0.5x.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "images_fm02-mouth",
+            "fm02-mouth"
+          ],
+          "src": [
+            "images/fm02-mouth-rmerMw@0.5x.webp",
+            "images/fm02-mouth-Rcrx5Q.webp"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
             "images_helmlok",
             "helmlok"
           ],

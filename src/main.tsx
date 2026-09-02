@@ -9,6 +9,7 @@ import { createRoot } from "react-dom/client";
 import { manifest } from "./assets";
 import { BACKGROUND_COLOR, HEIGHT, WIDTH } from "./constants";
 import "./index.css";
+import "./lib/ink-setup";
 import { queryClient, router } from "./router";
 
 const body = document.body;

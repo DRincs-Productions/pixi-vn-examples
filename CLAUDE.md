@@ -29,6 +29,10 @@ When adding a new example:
 - Give it an entry label id that matches the route (and any other labels it needs, also uniquely named).
 - Wire up a `Game.onEnd` handler for that example that restarts it via its entry label.
 
+## Characters: define per-route, not globally
+
+`CharacterBaseModel`s (and their `RegisteredCharacters.add(...)` registration) must be defined **inside the route file that uses them**, not in a shared/global file (e.g. no `src/values/characters.ts` imported by multiple routes). Each route is self-contained, matching how canvas routes each define their own local consts (e.g. `heredity-factor.tsx`'s alien setup) instead of pulling from a shared module. If two routes happen to need "the same" character (e.g. several `ink/character/*` examples all using an `mc`/"Liam" character), redefine it identically in each route file rather than factoring it out.
+
 ## Assets: anime style
 
 Local assets live under `src/assets/<folder>/` — AssetPack groups bundles by top-level folder (see `.assetpack.ts`), and a route loads the bundle(s) it needs with `Assets.loadBundle("<folder>")` in its `loader`. Assets used by more than one example (e.g. `src/assets/images/`) go in a shared folder rather than being duplicated per example — duplicating a file under two folders would also register its alias twice, and the manifest's alias-dedup logic would rename the second occurrence, breaking the alias examples expect (e.g. `"eggHead"`).
