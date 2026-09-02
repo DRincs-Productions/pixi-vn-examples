@@ -13,29 +13,6 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
-export const currentDialogueRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/narration/current-dialogue",
-    loader: async ({ context }) => {
-        await Assets.loadBundle("images");
-        Game.onEnd(async () => {
-            await Game.start(startLabel, {});
-            await context.queryClient.invalidateQueries();
-        });
-        await Game.start(startLabel, {});
-        await context.queryClient.invalidateQueries();
-    },
-    component: () => (
-        <ContinueOverlay>
-            <NarrationScreen />
-            <TextInputDialog />
-            <div className="absolute top-3 left-3 z-10">
-                <BackButton />
-            </div>
-        </ContinueOverlay>
-    ),
-});
-
 export const eggHead = new CharacterBaseModel("egg-head", {
     name: "Egg",
     surname: "Head",
@@ -70,3 +47,26 @@ export const startLabel = newLabel("narration/current-dialogue", [
     // if you don't want to set a character, you can set a string
     () => (narration.dialogue = "Hello, world!"),
 ]);
+
+export const currentDialogueRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/narration/current-dialogue",
+    loader: async ({ context }) => {
+        await Assets.loadBundle("images");
+        Game.onEnd(async () => {
+            await Game.start(startLabel, {});
+            await context.queryClient.invalidateQueries();
+        });
+        await Game.start(startLabel, {});
+        await context.queryClient.invalidateQueries();
+    },
+    component: () => (
+        <ContinueOverlay>
+            <NarrationScreen />
+            <TextInputDialog />
+            <div className="absolute top-3 left-3 z-10">
+                <BackButton />
+            </div>
+        </ContinueOverlay>
+    ),
+});

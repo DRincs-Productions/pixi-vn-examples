@@ -17,6 +17,25 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/heredity-factor", [
+    async () => {
+        const alien = await showImage("alien", "eggHead", { anchor: 0.5, align: 0.5 });
+
+        canvas.animate(alien, { angle: 360 }, { duration: 5, repeat: Infinity });
+        canvas.animate(
+            alien,
+            { xAlign: [0, 1, 1, 0, 0], yAlign: [0, 0, 1, 1, 0] },
+            { repeat: Infinity, duration: 10 },
+        );
+    },
+    async () => await showImage("alien", "flowerTop"),
+    async () => await showWithDissolve("alien", "helmlok"),
+    async () => await showWithFade("alien", "skully"),
+    async () => await moveIn("alien", "eggHead", { removeOldComponentWithMoveOut: true }),
+    async () => await zoomIn("alien", "flowerTop", { removeOldComponentWithZoomOut: true }),
+    async () => await pushIn("alien", "helmlok"),
+]);
+
 export const heredityFactorRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/heredity-factor",
@@ -39,22 +58,3 @@ export const heredityFactorRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/heredity-factor", [
-    async () => {
-        const alien = await showImage("alien", "eggHead", { anchor: 0.5, align: 0.5 });
-
-        canvas.animate(alien, { angle: 360 }, { duration: 5, repeat: Infinity });
-        canvas.animate(
-            alien,
-            { xAlign: [0, 1, 1, 0, 0], yAlign: [0, 0, 1, 1, 0] },
-            { repeat: Infinity, duration: 10 },
-        );
-    },
-    async () => await showImage("alien", "flowerTop"),
-    async () => await showWithDissolve("alien", "helmlok"),
-    async () => await showWithFade("alien", "skully"),
-    async () => await moveIn("alien", "eggHead", { removeOldComponentWithMoveOut: true }),
-    async () => await zoomIn("alien", "flowerTop", { removeOldComponentWithZoomOut: true }),
-    async () => await pushIn("alien", "helmlok"),
-]);

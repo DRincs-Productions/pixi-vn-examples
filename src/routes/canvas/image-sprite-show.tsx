@@ -6,6 +6,18 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/image-sprite-show", [
+    async () => {
+        await showImage("alien", "eggHead");
+        await showImage("alien2", "eggHead", {
+            xAlign: 0.5,
+        });
+        await showImage("alien3", "eggHead", {
+            xAlign: 1,
+        });
+    },
+]);
+
 export const imageSpriteShowRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/image-sprite-show",
@@ -28,15 +40,3 @@ export const imageSpriteShowRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/image-sprite-show", [
-    async () => {
-        await showImage("alien", "eggHead");
-        await showImage("alien2", "eggHead", {
-            xAlign: 0.5,
-        });
-        await showImage("alien3", "eggHead", {
-            xAlign: 1,
-        });
-    },
-]);

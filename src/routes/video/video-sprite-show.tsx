@@ -6,6 +6,18 @@ import { Assets, canvas, Game, newLabel, showVideo } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("video/video-sprite-show", [
+    async () => {
+        await showVideo("video");
+        await showVideo("video2", "video", {
+            xAlign: 0.5,
+        });
+        await showVideo("video3", "video", {
+            xAlign: 1,
+        });
+    },
+]);
+
 export const videoSpriteShowRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-show",
@@ -29,15 +41,3 @@ export const videoSpriteShowRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("video/video-sprite-show", [
-    async () => {
-        await showVideo("video");
-        await showVideo("video2", "video", {
-            xAlign: 0.5,
-        });
-        await showVideo("video3", "video", {
-            xAlign: 1,
-        });
-    },
-]);

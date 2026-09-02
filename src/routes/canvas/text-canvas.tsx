@@ -6,6 +6,16 @@ import { Game, canvas, newLabel, showText } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/text-canvas", [
+    async () => {
+        const text = await showText("text", "Hello World!", {
+            xAlign: 0.5,
+            yAlign: 0.5,
+        });
+        text.style.fontSize = 90;
+    },
+]);
+
 export const textCanvasRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/text-canvas",
@@ -28,13 +38,3 @@ export const textCanvasRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/text-canvas", [
-    async () => {
-        const text = await showText("text", "Hello World!", {
-            xAlign: 0.5,
-            yAlign: 0.5,
-        });
-        text.style.fontSize = 90;
-    },
-]);

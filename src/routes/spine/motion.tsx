@@ -12,6 +12,30 @@ const SPINEBOY_SKELETON =
 const SPINEBOY_ATLAS =
     "https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.3/examples/spineboy/export/spineboy-pma.atlas";
 
+export const startLabel = newLabel("spine/motion", [
+    async () => {
+        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
+        const spine = new Spine({
+            atlas: "spineboyAtlas",
+            skeleton: "spineboySkeleton",
+            xAlign: 0,
+            yAlign: 1,
+            animation: "walk",
+        });
+        canvas.add("boy", spine);
+        canvas.animate(
+            spine,
+            [
+                [{ xAlign: 1 }, { duration: 1, ease: "linear" }],
+                [{ scaleX: -1 }, { duration: 0.2 }],
+                [{ xAlign: 0 }, { duration: 1, ease: "linear" }],
+                [{ scaleX: 1 }, { duration: 0.2 }],
+            ],
+            { repeat: Infinity },
+        );
+    },
+]);
+
 export const spineMotionRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/spine/motion",
@@ -36,27 +60,3 @@ export const spineMotionRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("spine/motion", [
-    async () => {
-        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
-        const spine = new Spine({
-            atlas: "spineboyAtlas",
-            skeleton: "spineboySkeleton",
-            xAlign: 0,
-            yAlign: 1,
-            animation: "walk",
-        });
-        canvas.add("boy", spine);
-        canvas.animate(
-            spine,
-            [
-                [{ xAlign: 1 }, { duration: 1, ease: "linear" }],
-                [{ scaleX: -1 }, { duration: 0.2 }],
-                [{ xAlign: 0 }, { duration: 1, ease: "linear" }],
-                [{ scaleX: 1 }, { duration: 0.2 }],
-            ],
-            { repeat: Infinity },
-        );
-    },
-]);

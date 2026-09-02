@@ -12,11 +12,28 @@ const GOBLINS_SKELETON =
 const GOBLINS_ATLAS =
     "https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.3/examples/goblins/export/goblins-pma.atlas";
 
+export const startLabel = newLabel("spine/skin", [
+    async () => {
+        await Assets.load(["goblinsSkeleton", "goblinsAtlas"]);
+        const spine = new Spine({
+            atlas: "goblinsAtlas",
+            skeleton: "goblinsSkeleton",
+            skin: "goblin",
+            xAlign: 0.5,
+            yAlign: 1,
+            animation: "walk",
+        });
+        canvas.add("goblin", spine);
+    },
+    () => {
+        canvas.find<Spine>("goblin")?.setSkin("goblingirl");
+    },
+]);
+
 export const spineSkinRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/spine/skin",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(1440, 960);
         Assets.add({ alias: "goblinsSkeleton", src: GOBLINS_SKELETON });
         Assets.add({ alias: "goblinsAtlas", src: GOBLINS_ATLAS });
         Game.onEnd(async () => {
@@ -36,21 +53,3 @@ export const spineSkinRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("spine/skin", [
-    async () => {
-        await Assets.load(["goblinsSkeleton", "goblinsAtlas"]);
-        const spine = new Spine({
-            atlas: "goblinsAtlas",
-            skeleton: "goblinsSkeleton",
-            skin: "goblin",
-            xAlign: 0.5,
-            yAlign: 1,
-            animation: "walk",
-        });
-        canvas.add("goblin", spine);
-    },
-    () => {
-        canvas.find<Spine>("goblin")?.setSkin("goblingirl");
-    },
-]);

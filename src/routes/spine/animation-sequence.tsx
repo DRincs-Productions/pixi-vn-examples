@@ -12,6 +12,22 @@ const SPINEBOY_SKELETON =
 const SPINEBOY_ATLAS =
     "https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.3/examples/spineboy/export/spineboy-pma.atlas";
 
+export const startLabel = newLabel("spine/animation-sequence", [
+    async () => {
+        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
+        const spine = new Spine({
+            atlas: "spineboyAtlas",
+            skeleton: "spineboySkeleton",
+            xAlign: 0.5,
+            yAlign: 1,
+        });
+        spine.playSequence([["idle", { loop: true, duration: 0.5 }], "jump"], {
+            repeat: Infinity,
+        });
+        canvas.add("boy", spine);
+    },
+]);
+
 export const spineAnimationSequenceRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/spine/animation-sequence",
@@ -36,19 +52,3 @@ export const spineAnimationSequenceRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("spine/animation-sequence", [
-    async () => {
-        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
-        const spine = new Spine({
-            atlas: "spineboyAtlas",
-            skeleton: "spineboySkeleton",
-            xAlign: 0.5,
-            yAlign: 1,
-        });
-        spine.playSequence([["idle", { loop: true, duration: 0.5 }], "jump"], {
-            repeat: Infinity,
-        });
-        canvas.add("boy", spine);
-    },
-]);

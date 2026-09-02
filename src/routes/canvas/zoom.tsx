@@ -6,6 +6,13 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/zoom", [
+    async () => {
+        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5, scale: 0 });
+        canvas.animate(alien, { scaleX: 1, scaleY: 1 }, { ease: "circInOut", duration: 1 });
+    },
+]);
+
 export const zoomRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/zoom",
@@ -28,10 +35,3 @@ export const zoomRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/zoom", [
-    async () => {
-        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5, scale: 0 });
-        canvas.animate(alien, { scaleX: 1, scaleY: 1 }, { ease: "circInOut", duration: 1 });
-    },
-]);

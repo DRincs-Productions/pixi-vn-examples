@@ -14,29 +14,6 @@ import {
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
-export const addListenerGivenEventRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/canvas/add-listener-given-event",
-    loader: async ({ context }) => {
-        await Assets.loadBundle("images");
-        Game.onEnd(async () => {
-            await Game.start(startLabel, {});
-            await context.queryClient.invalidateQueries();
-        });
-        await Game.start(startLabel, {});
-        await context.queryClient.invalidateQueries();
-    },
-    component: () => (
-        <ContinueOverlay>
-            <NarrationScreen />
-            <TextInputDialog />
-            <div className="absolute top-3 left-3 z-10">
-                <BackButton />
-            </div>
-        </ContinueOverlay>
-    ),
-});
-
 export class Events {
     @eventDecorator()
     static buttonEvent(event: FederatedEvent, sprite: Sprite): void {
@@ -60,3 +37,26 @@ export const startLabel = newLabel("canvas/add-listener-given-event", [
         bunny.on("pointerdown", Events.buttonEvent);
     },
 ]);
+
+export const addListenerGivenEventRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/canvas/add-listener-given-event",
+    loader: async ({ context }) => {
+        await Assets.loadBundle("images");
+        Game.onEnd(async () => {
+            await Game.start(startLabel, {});
+            await context.queryClient.invalidateQueries();
+        });
+        await Game.start(startLabel, {});
+        await context.queryClient.invalidateQueries();
+    },
+    component: () => (
+        <ContinueOverlay>
+            <NarrationScreen />
+            <TextInputDialog />
+            <div className="absolute top-3 left-3 z-10">
+                <BackButton />
+            </div>
+        </ContinueOverlay>
+    ),
+});

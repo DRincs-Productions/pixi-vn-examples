@@ -14,6 +14,20 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("video/video-sprite-restart", [
+    async () => {
+        narration.dialogue = "add video";
+        await showVideo("video");
+    },
+    async () => {
+        narration.dialogue = "restart video";
+        const video = canvas.find<VideoSprite>("video");
+        if (video) {
+            video.restart();
+        }
+    },
+]);
+
 export const videoSpriteRestartRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-restart",
@@ -36,17 +50,3 @@ export const videoSpriteRestartRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("video/video-sprite-restart", [
-    async () => {
-        narration.dialogue = "add video";
-        await showVideo("video");
-    },
-    async () => {
-        narration.dialogue = "restart video";
-        const video = canvas.find<VideoSprite>("video");
-        if (video) {
-            video.restart();
-        }
-    },
-]);

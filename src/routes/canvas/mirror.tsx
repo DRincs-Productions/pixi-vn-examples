@@ -6,6 +6,14 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/mirror", [
+    async () => {
+        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5 });
+        canvas.animate(alien, { scaleX: -1 });
+    },
+    () => canvas.animate("alien", { scaleX: 1 }),
+]);
+
 export const mirrorRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/mirror",
@@ -28,11 +36,3 @@ export const mirrorRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/mirror", [
-    async () => {
-        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5 });
-        canvas.animate(alien, { scaleX: -1 });
-    },
-    () => canvas.animate("alien", { scaleX: 1 }),
-]);

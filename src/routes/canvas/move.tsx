@@ -6,6 +6,16 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/move", [
+    async () => {
+        const alien = await showImage("alien", "eggHead");
+        canvas.animate(alien, { xAlign: 1, yAlign: 0 }, { ease: "easeOut" });
+    },
+    () => canvas.animate<ImageSprite>("alien", { xAlign: 1, yAlign: 1 }, { ease: "backOut" }),
+    () => canvas.animate<ImageSprite>("alien", { xAlign: 0, yAlign: 1 }, { ease: "circIn" }),
+    () => canvas.animate<ImageSprite>("alien", { xAlign: 0, yAlign: 0 }, { ease: "linear" }),
+]);
+
 export const moveRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/move",
@@ -28,13 +38,3 @@ export const moveRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/move", [
-    async () => {
-        const alien = await showImage("alien", "eggHead");
-        canvas.animate(alien, { xAlign: 1, yAlign: 0 }, { ease: "easeOut" });
-    },
-    () => canvas.animate<ImageSprite>("alien", { xAlign: 1, yAlign: 1 }, { ease: "backOut" }),
-    () => canvas.animate<ImageSprite>("alien", { xAlign: 0, yAlign: 1 }, { ease: "circIn" }),
-    () => canvas.animate<ImageSprite>("alien", { xAlign: 0, yAlign: 0 }, { ease: "linear" }),
-]);

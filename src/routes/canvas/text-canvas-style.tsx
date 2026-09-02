@@ -6,28 +6,6 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
-export const textCanvasStyleRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/canvas/text-canvas-style",
-    loader: async ({ context }) => {
-        Game.onEnd(async () => {
-            await Game.start(startLabel, {});
-            await context.queryClient.invalidateQueries();
-        });
-        await Game.start(startLabel, {});
-        await context.queryClient.invalidateQueries();
-    },
-    component: () => (
-        <ContinueOverlay>
-            <NarrationScreen />
-            <TextInputDialog />
-            <div className="absolute top-3 left-3 z-10">
-                <BackButton />
-            </div>
-        </ContinueOverlay>
-    ),
-});
-
 export const startLabel = newLabel("canvas/text-canvas-style", [
     () => {
         const skewStyle = new TextStyle({
@@ -55,3 +33,25 @@ export const startLabel = newLabel("canvas/text-canvas-style", [
         canvas.add("text", skewText);
     },
 ]);
+
+export const textCanvasStyleRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/canvas/text-canvas-style",
+    loader: async ({ context }) => {
+        Game.onEnd(async () => {
+            await Game.start(startLabel, {});
+            await context.queryClient.invalidateQueries();
+        });
+        await Game.start(startLabel, {});
+        await context.queryClient.invalidateQueries();
+    },
+    component: () => (
+        <ContinueOverlay>
+            <NarrationScreen />
+            <TextInputDialog />
+            <div className="absolute top-3 left-3 z-10">
+                <BackButton />
+            </div>
+        </ContinueOverlay>
+    ),
+});

@@ -10,6 +10,27 @@ import { rootRoute } from "../__root";
 const SHIZUKU_MODEL =
     "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json";
 
+export const startLabel = newLabel("live2d/motion-js", [
+    async () => {
+        const live2d = new Live2D({
+            source: "shizuku",
+            xAlign: 0.3,
+            yAlign: 1,
+            scale: 0.5,
+        });
+        await live2d.ready;
+        canvas.add("shizuku", live2d);
+        canvas.animate(
+            live2d,
+            [
+                [{ x: canvas.width * 0.7 }, { duration: 2, ease: "linear" }],
+                [{ x: canvas.width * 0.3 }, { duration: 2, ease: "linear" }],
+            ],
+            { repeat: Infinity },
+        );
+    },
+]);
+
 export const live2dMotionJsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/live2d/motion-js",
@@ -33,24 +54,3 @@ export const live2dMotionJsRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("live2d/motion-js", [
-    async () => {
-        const live2d = new Live2D({
-            source: "shizuku",
-            xAlign: 0.3,
-            yAlign: 1,
-            scale: 0.5,
-        });
-        await live2d.ready;
-        canvas.add("shizuku", live2d);
-        canvas.animate(
-            live2d,
-            [
-                [{ x: canvas.width * 0.7 }, { duration: 2, ease: "linear" }],
-                [{ x: canvas.width * 0.3 }, { duration: 2, ease: "linear" }],
-            ],
-            { repeat: Infinity },
-        );
-    },
-]);

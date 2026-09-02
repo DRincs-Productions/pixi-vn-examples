@@ -6,6 +6,18 @@ import { Assets, canvas, Game, newLabel, Sprite } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/remove-canvas-components", [
+    async () => {
+        const sprite = new Sprite();
+        const texture = await Assets.load("eggHead");
+        sprite.texture = texture;
+        canvas.add("sprite", sprite);
+    },
+    () => {
+        canvas.remove("sprite");
+    },
+]);
+
 export const removeCanvasComponentsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/remove-canvas-components",
@@ -28,15 +40,3 @@ export const removeCanvasComponentsRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/remove-canvas-components", [
-    async () => {
-        const sprite = new Sprite();
-        const texture = await Assets.load("eggHead");
-        sprite.texture = texture;
-        canvas.add("sprite", sprite);
-    },
-    () => {
-        canvas.remove("sprite");
-    },
-]);

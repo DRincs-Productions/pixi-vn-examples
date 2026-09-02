@@ -6,6 +6,26 @@ import { addVideo, Assets, canvas, Game, newLabel, type VideoSprite } from "@dri
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("video/video-sprite-add", [
+    () => {
+        addVideo("video");
+        addVideo("video2", "video", {
+            xAlign: 0.5,
+        });
+        addVideo("video3", "video", {
+            xAlign: 1,
+        });
+    },
+    async () => {
+        const video1 = canvas.find<VideoSprite>("video");
+        const video2 = canvas.find<VideoSprite>("video2");
+        const video3 = canvas.find<VideoSprite>("video3");
+        video1 && (await video1.load());
+        video2 && (await video2.load());
+        video3 && (await video3.load());
+    },
+]);
+
 export const videoSpriteAddRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-add",
@@ -29,23 +49,3 @@ export const videoSpriteAddRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("video/video-sprite-add", [
-    () => {
-        addVideo("video");
-        addVideo("video2", "video", {
-            xAlign: 0.5,
-        });
-        addVideo("video3", "video", {
-            xAlign: 1,
-        });
-    },
-    async () => {
-        const video1 = canvas.find<VideoSprite>("video");
-        const video2 = canvas.find<VideoSprite>("video2");
-        const video3 = canvas.find<VideoSprite>("video3");
-        video1 && (await video1.load());
-        video2 && (await video2.load());
-        video3 && (await video3.load());
-    },
-]);

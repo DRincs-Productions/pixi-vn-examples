@@ -13,6 +13,17 @@ import {
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/shake", [
+    async () => {
+        await showImage("bg", "bg_grass", { scale: 1.3 });
+        await showImage("alien", "eggHead", { align: 0.5 });
+        shakeEffect("alien");
+    },
+    async () => {
+        shakeEffect(CANVAS_APP_GAME_LAYER_ALIAS);
+    },
+]);
+
 export const shakeRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/shake",
@@ -35,14 +46,3 @@ export const shakeRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/shake", [
-    async () => {
-        await showImage("bg", "bg_grass", { scale: 1.3 });
-        await showImage("alien", "eggHead", { align: 0.5 });
-        shakeEffect("alien");
-    },
-    async () => {
-        shakeEffect(CANVAS_APP_GAME_LAYER_ALIAS);
-    },
-]);

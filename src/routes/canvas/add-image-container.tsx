@@ -13,6 +13,19 @@ import {
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/add-image-container", [
+    () => {
+        addImageCointainer("james", ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"], {
+            xAlign: 0.5,
+            yAlign: 1,
+        });
+    },
+    async () => {
+        const james = canvas.find<ImageContainer>("james");
+        james && (await james.load());
+    },
+]);
+
 export const addImageContainerRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/add-image-container",
@@ -36,16 +49,3 @@ export const addImageContainerRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/add-image-container", [
-    () => {
-        addImageCointainer("james", ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"], {
-            xAlign: 0.5,
-            yAlign: 1,
-        });
-    },
-    async () => {
-        const james = canvas.find<ImageContainer>("james");
-        james && (await james.load());
-    },
-]);

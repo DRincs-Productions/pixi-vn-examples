@@ -6,6 +6,20 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/sequence", [
+    async () => {
+        const alien = await showImage("alien", "eggHead");
+        canvas.animate(
+            alien,
+            {
+                xAlign: [0, 1, 1, 0, 0],
+                yAlign: [0, 0, 1, 1, 0],
+            },
+            { repeat: Infinity, duration: 10 },
+        );
+    },
+]);
+
 export const sequenceRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/sequence",
@@ -28,17 +42,3 @@ export const sequenceRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/sequence", [
-    async () => {
-        const alien = await showImage("alien", "eggHead");
-        canvas.animate(
-            alien,
-            {
-                xAlign: [0, 1, 1, 0, 0],
-                yAlign: [0, 0, 1, 1, 0],
-            },
-            { repeat: Infinity, duration: 10 },
-        );
-    },
-]);

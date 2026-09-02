@@ -14,6 +14,27 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("video/video-sprite-play-pause", [
+    async () => {
+        narration.dialogue = "add video";
+        await showVideo("video");
+    },
+    async () => {
+        narration.dialogue = "pause video";
+        const video = canvas.find<VideoSprite>("video");
+        if (video) {
+            video.pause();
+        }
+    },
+    async () => {
+        narration.dialogue = "resume video";
+        const video = canvas.find<VideoSprite>("video");
+        if (video) {
+            video.play();
+        }
+    },
+]);
+
 export const videoSpritePlayPauseRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-play-pause",
@@ -36,24 +57,3 @@ export const videoSpritePlayPauseRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("video/video-sprite-play-pause", [
-    async () => {
-        narration.dialogue = "add video";
-        await showVideo("video");
-    },
-    async () => {
-        narration.dialogue = "pause video";
-        const video = canvas.find<VideoSprite>("video");
-        if (video) {
-            video.pause();
-        }
-    },
-    async () => {
-        narration.dialogue = "resume video";
-        const video = canvas.find<VideoSprite>("video");
-        if (video) {
-            video.play();
-        }
-    },
-]);

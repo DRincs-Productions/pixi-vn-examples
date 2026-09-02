@@ -6,6 +6,13 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("video/video-sprite-looping", [
+    async () => {
+        const video = await showVideo("video");
+        video.loop = true;
+    },
+]);
+
 export const videoSpriteLoopingRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-looping",
@@ -28,10 +35,3 @@ export const videoSpriteLoopingRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("video/video-sprite-looping", [
-    async () => {
-        const video = await showVideo("video");
-        video.loop = true;
-    },
-]);

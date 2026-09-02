@@ -12,6 +12,23 @@ const SPINEBOY_SKELETON =
 const SPINEBOY_ATLAS =
     "https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.3/examples/spineboy/export/spineboy-pma.atlas";
 
+export const startLabel = newLabel("spine/clear-tracks", [
+    async () => {
+        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
+        const spine = new Spine({
+            atlas: "spineboyAtlas",
+            skeleton: "spineboySkeleton",
+            xAlign: 0,
+            yAlign: 1,
+            animation: "walk",
+        });
+        canvas.add("boy", spine);
+    },
+    () => {
+        canvas.find<Spine>("boy")?.clearTracks();
+    },
+]);
+
 export const spineClearTracksRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/spine/clear-tracks",
@@ -36,20 +53,3 @@ export const spineClearTracksRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("spine/clear-tracks", [
-    async () => {
-        await Assets.load(["spineboySkeleton", "spineboyAtlas"]);
-        const spine = new Spine({
-            atlas: "spineboyAtlas",
-            skeleton: "spineboySkeleton",
-            xAlign: 0,
-            yAlign: 1,
-            animation: "walk",
-        });
-        canvas.add("boy", spine);
-    },
-    () => {
-        canvas.find<Spine>("boy")?.clearTracks();
-    },
-]);

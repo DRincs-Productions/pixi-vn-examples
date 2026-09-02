@@ -34,6 +34,7 @@ import { live2dMotionRoute } from "./routes/live2d/motion";
 import { live2dMotionJsRoute } from "./routes/live2d/motion-js";
 import { live2dShowRoute } from "./routes/live2d/show";
 import { live2dStopMotionsRoute } from "./routes/live2d/stop-motions";
+import { minigameSnakeRoute } from "./routes/minigame/snake";
 import { spineAnimationRoute } from "./routes/spine/animation";
 import { spineAnimationSequenceRoute } from "./routes/spine/animation-sequence";
 import { spineClearTracksRoute } from "./routes/spine/clear-tracks";
@@ -113,6 +114,8 @@ const routeTree = rootRoute.addChildren([
     live2dExpressionRoute,
     live2dMotionJsRoute,
     live2dStopMotionsRoute,
+    // minigame
+    minigameSnakeRoute,
 ]);
 
 export const router = createRouter({

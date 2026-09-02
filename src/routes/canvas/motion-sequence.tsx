@@ -6,6 +6,23 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/motion-sequence", [
+    async () => {
+        const alien = await showImage("alien", "eggHead");
+        canvas.animate(
+            alien,
+            [
+                [{ xAlign: 0, yAlign: 0 }, { ease: "circInOut" }],
+                [{ xAlign: 1, yAlign: 0 }, { ease: "backInOut" }],
+                [{ xAlign: 1, yAlign: 1 }, { ease: "linear" }],
+                [{ xAlign: 0, yAlign: 1 }, { ease: "anticipate" }],
+                [{ xAlign: 0, yAlign: 0 }, { ease: "easeOut" }],
+            ],
+            { repeat: 10, duration: 10 },
+        );
+    },
+]);
+
 export const motionSequenceRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/motion-sequence",
@@ -28,20 +45,3 @@ export const motionSequenceRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/motion-sequence", [
-    async () => {
-        const alien = await showImage("alien", "eggHead");
-        canvas.animate(
-            alien,
-            [
-                [{ xAlign: 0, yAlign: 0 }, { ease: "circInOut" }],
-                [{ xAlign: 1, yAlign: 0 }, { ease: "backInOut" }],
-                [{ xAlign: 1, yAlign: 1 }, { ease: "linear" }],
-                [{ xAlign: 0, yAlign: 1 }, { ease: "anticipate" }],
-                [{ xAlign: 0, yAlign: 0 }, { ease: "easeOut" }],
-            ],
-            { repeat: 10, duration: 10 },
-        );
-    },
-]);

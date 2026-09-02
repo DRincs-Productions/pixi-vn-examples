@@ -10,6 +10,19 @@ import { rootRoute } from "../__root";
 const SHIZUKU_MODEL =
     "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json";
 
+export const startLabel = newLabel("live2d/show", [
+    async () => {
+        const live2d = new Live2D({
+            source: "shizuku",
+            xAlign: 0.5,
+            yAlign: 1,
+            scale: 0.5,
+        });
+        await live2d.ready;
+        canvas.add("shizuku", live2d);
+    },
+]);
+
 export const live2dShowRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/live2d/show",
@@ -33,16 +46,3 @@ export const live2dShowRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("live2d/show", [
-    async () => {
-        const live2d = new Live2D({
-            source: "shizuku",
-            xAlign: 0.5,
-            yAlign: 1,
-            scale: 0.5,
-        });
-        await live2d.ready;
-        canvas.add("shizuku", live2d);
-    },
-]);

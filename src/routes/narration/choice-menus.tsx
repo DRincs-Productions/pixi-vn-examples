@@ -13,6 +13,22 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel: Label = newLabel("narration/choice-menus", [
+    async () => {
+        narration.dialogue = "Choose a fruit:";
+        narration.choices = [
+            newChoiceOption("Orange", orangeLabel, {}),
+            newChoiceOption("Banana", bananaLabel, {}, { type: "jump" }),
+            newChoiceOption("Apple", appleLabel, { quantity: 5 }, { type: "call" }),
+            newCloseChoiceOption("Cancel"),
+        ];
+    },
+    () => {
+        narration.dialogue = "Restart";
+    },
+    async (props) => await narration.jump(startLabel, props),
+]);
+
 export const choiceMenusRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/narration/choice-menus",
@@ -34,22 +50,6 @@ export const choiceMenusRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel: Label = newLabel("narration/choice-menus", [
-    async () => {
-        narration.dialogue = "Choose a fruit:";
-        narration.choices = [
-            newChoiceOption("Orange", orangeLabel, {}),
-            newChoiceOption("Banana", bananaLabel, {}, { type: "jump" }),
-            newChoiceOption("Apple", appleLabel, { quantity: 5 }, { type: "call" }),
-            newCloseChoiceOption("Cancel"),
-        ];
-    },
-    () => {
-        narration.dialogue = "Restart";
-    },
-    async (props) => await narration.jump(startLabel, props),
-]);
 
 const appleLabel = newLabel<{ quantity: number }>("choice-menus-apple", [
     (props) => {

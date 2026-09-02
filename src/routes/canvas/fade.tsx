@@ -6,6 +6,13 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/fade", [
+    async () => {
+        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5, alpha: 0 });
+        canvas.animate(alien, { alpha: 1 }, { ease: "linear", duration: 1 });
+    },
+]);
+
 export const fadeRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/fade",
@@ -28,10 +35,3 @@ export const fadeRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/fade", [
-    async () => {
-        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5, alpha: 0 });
-        canvas.animate(alien, { alpha: 1 }, { ease: "linear", duration: 1 });
-    },
-]);

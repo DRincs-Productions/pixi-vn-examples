@@ -6,28 +6,6 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
-export const returningDifferentStepListsRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/narration/returning-different-step-lists",
-    loader: async ({ context }) => {
-        Game.onEnd(async () => {
-            await Game.start(startLabel, {});
-            await context.queryClient.invalidateQueries();
-        });
-        await Game.start(startLabel, {});
-        await context.queryClient.invalidateQueries();
-    },
-    component: () => (
-        <ContinueOverlay>
-            <NarrationScreen />
-            <TextInputDialog />
-            <div className="absolute top-3 left-3 z-10">
-                <BackButton />
-            </div>
-        </ContinueOverlay>
-    ),
-});
-
 export const startLabel = newLabel("narration/returning-different-step-lists", () => {
     const condition = storage.flags.get("condition");
     if (condition) {
@@ -50,4 +28,26 @@ export const startLabel = newLabel("narration/returning-different-step-lists", (
             },
         ];
     }
+});
+
+export const returningDifferentStepListsRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/narration/returning-different-step-lists",
+    loader: async ({ context }) => {
+        Game.onEnd(async () => {
+            await Game.start(startLabel, {});
+            await context.queryClient.invalidateQueries();
+        });
+        await Game.start(startLabel, {});
+        await context.queryClient.invalidateQueries();
+    },
+    component: () => (
+        <ContinueOverlay>
+            <NarrationScreen />
+            <TextInputDialog />
+            <div className="absolute top-3 left-3 z-10">
+                <BackButton />
+            </div>
+        </ContinueOverlay>
+    ),
 });

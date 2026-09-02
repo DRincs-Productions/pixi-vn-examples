@@ -6,6 +6,17 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/align", [
+    async () => {
+        await showImage("eggHead", "eggHead", { align: 0.5 });
+        await showImage("flowerTop", "flowerTop", { align: 0 });
+        await showImage("panda", "panda", { xAlign: 1, yAlign: 0 });
+        await showImage("skully", "skully", { xAlign: 0, yAlign: 1 });
+        await showImage("helmlok", "helmlok", { align: 1 });
+        await showImage("bunny", "bunny", { xAlign: 0.5, yAlign: 1 });
+    },
+]);
+
 export const alignRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/align",
@@ -28,14 +39,3 @@ export const alignRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/align", [
-    async () => {
-        await showImage("eggHead", "eggHead", { align: 0.5 });
-        await showImage("flowerTop", "flowerTop", { align: 0 });
-        await showImage("panda", "panda", { xAlign: 1, yAlign: 0 });
-        await showImage("skully", "skully", { xAlign: 0, yAlign: 1 });
-        await showImage("helmlok", "helmlok", { align: 1 });
-        await showImage("bunny", "bunny", { xAlign: 0.5, yAlign: 1 });
-    },
-]);

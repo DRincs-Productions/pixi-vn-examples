@@ -6,6 +6,17 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/rotate", [
+    async () => {
+        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5 });
+        canvas.animate(
+            alien,
+            { angle: 360 },
+            { duration: 1, type: "spring", repeat: Infinity, repeatDelay: 0.2 },
+        );
+    },
+]);
+
 export const rotateRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/rotate",
@@ -28,14 +39,3 @@ export const rotateRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/rotate", [
-    async () => {
-        const alien = await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5 });
-        canvas.animate(
-            alien,
-            { angle: 360 },
-            { duration: 1, type: "spring", repeat: Infinity, repeatDelay: 0.2 },
-        );
-    },
-]);

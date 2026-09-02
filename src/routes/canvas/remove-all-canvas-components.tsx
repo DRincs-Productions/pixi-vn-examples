@@ -6,6 +6,21 @@ import { Assets, canvas, Game, newLabel, Sprite } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/remove-all-canvas-components", [
+    async () => {
+        const texture = await Assets.load("eggHead");
+        for (let i = 0; i < 3; i++) {
+            const sprite = new Sprite();
+            sprite.texture = texture;
+            sprite.x = i * 150;
+            canvas.add(`sprite${i}`, sprite);
+        }
+    },
+    () => {
+        canvas.removeAll();
+    },
+]);
+
 export const removeAllCanvasComponentsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/remove-all-canvas-components",
@@ -28,18 +43,3 @@ export const removeAllCanvasComponentsRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/remove-all-canvas-components", [
-    async () => {
-        const texture = await Assets.load("eggHead");
-        for (let i = 0; i < 3; i++) {
-            const sprite = new Sprite();
-            sprite.texture = texture;
-            sprite.x = i * 150;
-            canvas.add(`sprite${i}`, sprite);
-        }
-    },
-    () => {
-        canvas.removeAll();
-    },
-]);

@@ -6,6 +6,20 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/movein-transition", [
+    async () => {
+        await moveIn("alien", "eggHead", { direction: "up" });
+        await moveIn("human", {
+            value: ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"],
+            options: { scale: 0.5, xAlign: 0.7 },
+        });
+    },
+    async () => {
+        await moveIn("alien", "flowerTop", { direction: "up" });
+        moveOut("human");
+    },
+]);
+
 export const moveinTransitionRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/movein-transition",
@@ -28,17 +42,3 @@ export const moveinTransitionRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/movein-transition", [
-    async () => {
-        await moveIn("alien", "eggHead", { direction: "up" });
-        await moveIn("human", {
-            value: ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"],
-            options: { scale: 0.5, xAlign: 0.7 },
-        });
-    },
-    async () => {
-        await moveIn("alien", "flowerTop", { direction: "up" });
-        moveOut("human");
-    },
-]);

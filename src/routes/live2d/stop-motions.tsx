@@ -10,6 +10,23 @@ import { rootRoute } from "../__root";
 const SHIZUKU_MODEL =
     "https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json";
 
+export const startLabel = newLabel("live2d/stop-motions", [
+    async () => {
+        const live2d = new Live2D({
+            source: "shizuku",
+            xAlign: 0.5,
+            yAlign: 1,
+            scale: 0.5,
+        });
+        await live2d.ready;
+        canvas.add("shizuku", live2d);
+        live2d.motion("tap_body");
+    },
+    () => {
+        canvas.find<Live2D>("shizuku")?.stopMotions();
+    },
+]);
+
 export const live2dStopMotionsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/live2d/stop-motions",
@@ -33,20 +50,3 @@ export const live2dStopMotionsRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("live2d/stop-motions", [
-    async () => {
-        const live2d = new Live2D({
-            source: "shizuku",
-            xAlign: 0.5,
-            yAlign: 1,
-            scale: 0.5,
-        });
-        await live2d.ready;
-        canvas.add("shizuku", live2d);
-        live2d.motion("tap_body");
-    },
-    () => {
-        canvas.find<Live2D>("shizuku")?.stopMotions();
-    },
-]);

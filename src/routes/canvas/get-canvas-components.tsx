@@ -6,6 +6,22 @@ import { Assets, canvas, Game, newLabel, Sprite } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("canvas/get-canvas-components", [
+    async () => {
+        const sprite = new Sprite();
+        const texture = await Assets.load("eggHead");
+        sprite.texture = texture;
+        canvas.add("sprite", sprite);
+    },
+    () => {
+        const sprite = canvas.find("sprite");
+        if (sprite) {
+            sprite.x = 100;
+            sprite.y = 100;
+        }
+    },
+]);
+
 export const getCanvasComponentsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/get-canvas-components",
@@ -28,19 +44,3 @@ export const getCanvasComponentsRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("canvas/get-canvas-components", [
-    async () => {
-        const sprite = new Sprite();
-        const texture = await Assets.load("eggHead");
-        sprite.texture = texture;
-        canvas.add("sprite", sprite);
-    },
-    () => {
-        const sprite = canvas.find("sprite");
-        if (sprite) {
-            sprite.x = 100;
-            sprite.y = 100;
-        }
-    },
-]);

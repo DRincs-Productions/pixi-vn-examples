@@ -6,6 +6,17 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
+export const startLabel = newLabel("narration/dialogue-glue", [
+    () => {
+        narration.dialogue = "Hello, my name is Alice and ...";
+    },
+    () => {
+        // "glue" appends the next dialogue to the current one instead of replacing it
+        narration.dialogGlue = true;
+        narration.dialogue = "I am a character in this game.";
+    },
+]);
+
 export const dialogueGlueRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/narration/dialogue-glue",
@@ -27,14 +38,3 @@ export const dialogueGlueRoute = createRoute({
         </ContinueOverlay>
     ),
 });
-
-export const startLabel = newLabel("narration/dialogue-glue", [
-    () => {
-        narration.dialogue = "Hello, my name is Alice and ...";
-    },
-    () => {
-        // "glue" appends the next dialogue to the current one instead of replacing it
-        narration.dialogGlue = true;
-        narration.dialogue = "I am a character in this game.";
-    },
-]);

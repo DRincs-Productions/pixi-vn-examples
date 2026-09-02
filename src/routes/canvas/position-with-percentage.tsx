@@ -6,29 +6,6 @@ import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { rootRoute } from "../__root";
 
-export const positionWithPercentageRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/canvas/position-with-percentage",
-    loader: async ({ context }) => {
-        await Assets.loadBundle("images");
-        Game.onEnd(async () => {
-            await Game.start(startLabel, {});
-            await context.queryClient.invalidateQueries();
-        });
-        await Game.start(startLabel, {});
-        await context.queryClient.invalidateQueries();
-    },
-    component: () => (
-        <ContinueOverlay>
-            <NarrationScreen />
-            <TextInputDialog />
-            <div className="absolute top-3 left-3 z-10">
-                <BackButton />
-            </div>
-        </ContinueOverlay>
-    ),
-});
-
 export const startLabel = newLabel("canvas/position-with-percentage", [
     async () => {
         await showImage("eggHead", "eggHead", {
@@ -59,3 +36,26 @@ export const startLabel = newLabel("canvas/position-with-percentage", [
         });
     },
 ]);
+
+export const positionWithPercentageRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/canvas/position-with-percentage",
+    loader: async ({ context }) => {
+        await Assets.loadBundle("images");
+        Game.onEnd(async () => {
+            await Game.start(startLabel, {});
+            await context.queryClient.invalidateQueries();
+        });
+        await Game.start(startLabel, {});
+        await context.queryClient.invalidateQueries();
+    },
+    component: () => (
+        <ContinueOverlay>
+            <NarrationScreen />
+            <TextInputDialog />
+            <div className="absolute top-3 left-3 z-10">
+                <BackButton />
+            </div>
+        </ContinueOverlay>
+    ),
+});
