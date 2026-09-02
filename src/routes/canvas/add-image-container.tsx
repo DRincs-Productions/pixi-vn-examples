@@ -17,7 +17,7 @@ export const addImageContainerRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/add-image-container",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(1920, 1080);
+        canvas.app.renderer.resize(1440, 960);
         await Assets.loadBundle("images");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});

@@ -10,7 +10,7 @@ export const videoSpriteAddRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/video/video-sprite-add",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(1920, 1080);
+        canvas.app.renderer.resize(1440, 960);
         await Assets.loadBundle("videos");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});

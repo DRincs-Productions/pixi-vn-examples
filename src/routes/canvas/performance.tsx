@@ -20,7 +20,7 @@ export const performanceRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/canvas/performance",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(1920, 1080);
+        canvas.app.renderer.resize(1440, 960);
         await Assets.loadBundle("images");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});

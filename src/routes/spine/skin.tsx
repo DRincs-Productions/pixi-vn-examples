@@ -1,10 +1,10 @@
-import { Assets, canvas, Game, newLabel } from "@drincs/pixi-vn";
-import { Spine } from "@drincs/pixi-vn-spine";
-import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
+import { Assets, canvas, Game, newLabel } from "@drincs/pixi-vn";
+import { Spine } from "@drincs/pixi-vn-spine";
+import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 const GOBLINS_SKELETON =
@@ -16,6 +16,7 @@ export const spineSkinRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/spine/skin",
     loader: async ({ context }) => {
+        canvas.app.renderer.resize(1440, 960);
         Assets.add({ alias: "goblinsSkeleton", src: GOBLINS_SKELETON });
         Assets.add({ alias: "goblinsAtlas", src: GOBLINS_ATLAS });
         Game.onEnd(async () => {

@@ -1,10 +1,10 @@
-import { Assets, canvas, Game, newLabel } from "@drincs/pixi-vn";
-import { Live2D } from "@drincs/pixi-vn-live2d";
-import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
+import { Assets, canvas, Game, newLabel } from "@drincs/pixi-vn";
+import { Live2D } from "@drincs/pixi-vn-live2d";
+import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 const SHIZUKU_MODEL =
@@ -14,6 +14,7 @@ export const live2dStopMotionsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/live2d/stop-motions",
     loader: async ({ context }) => {
+        canvas.app.renderer.resize(1440, 960);
         Assets.add({ alias: "shizuku", src: SHIZUKU_MODEL });
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
