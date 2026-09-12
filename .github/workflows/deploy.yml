@@ -2,9 +2,12 @@ name: Deploy to Cloudflare Pages
 
 # Every commit on main gets built and published straight to the roves.pages.dev
 # Cloudflare Pages project -- see https://developers.cloudflare.com/pages/.
+# Also runs daily at midnight UTC for automated testing.
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 0 * * *'
 
 concurrency:
   group: deploy-${{ github.ref }}
