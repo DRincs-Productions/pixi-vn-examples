@@ -5,9 +5,9 @@ import TextInputDialog from "@/components/narration/TextInputDialog";
 import {
     Assets,
     CANVAS_APP_GAME_LAYER_ALIAS,
+    effects,
     Game,
     newLabel,
-    shakeEffect,
     showImage,
 } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
@@ -17,10 +17,10 @@ export const startLabel = newLabel("canvas/shake", [
     async () => {
         await showImage("bg", "bg_grass", { scale: 1.3 });
         await showImage("alien", "eggHead", { align: 0.5 });
-        shakeEffect("alien");
+        effects.shakeEffect("alien");
     },
     async () => {
-        shakeEffect(CANVAS_APP_GAME_LAYER_ALIAS);
+        effects.shakeEffect(CANVAS_APP_GAME_LAYER_ALIAS);
     },
 ]);
 

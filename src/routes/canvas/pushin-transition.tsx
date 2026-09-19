@@ -1,22 +1,22 @@
-import { Assets, Game, newLabel, pushIn, pushOut } from "@drincs/pixi-vn";
-import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
+import { Assets, Game, newLabel, transitions } from "@drincs/pixi-vn";
+import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/pushin-transition", [
     async () => {
-        await pushIn("alien", "eggHead");
-        await pushIn("human", {
+        await transitions.pushIn("alien", "eggHead");
+        await transitions.pushIn("human", {
             value: ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"],
             options: { scale: 0.5, xAlign: 0.7 },
         });
     },
     async () => {
-        await pushIn("alien", "flowerTop", { direction: "up" });
-        pushOut("human");
+        await transitions.pushIn("alien", "flowerTop", { direction: "up" });
+        transitions.pushOut("human");
     },
 ]);
 

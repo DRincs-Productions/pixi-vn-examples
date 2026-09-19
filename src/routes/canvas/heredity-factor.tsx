@@ -1,20 +1,16 @@
-import {
-    Assets,
-    canvas,
-    Game,
-    moveIn,
-    newLabel,
-    pushIn,
-    showImage,
-    showWithDissolve,
-    showWithFade,
-    zoomIn,
-} from "@drincs/pixi-vn";
-import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
+import {
+    Assets,
+    canvas,
+    Game,
+    newLabel,
+    showImage,
+    transitions,
+} from "@drincs/pixi-vn";
+import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/heredity-factor", [
@@ -29,11 +25,11 @@ export const startLabel = newLabel("canvas/heredity-factor", [
         );
     },
     async () => await showImage("alien", "flowerTop"),
-    async () => await showWithDissolve("alien", "helmlok"),
-    async () => await showWithFade("alien", "skully"),
-    async () => await moveIn("alien", "eggHead", { removeOldComponentWithMoveOut: true }),
-    async () => await zoomIn("alien", "flowerTop", { removeOldComponentWithZoomOut: true }),
-    async () => await pushIn("alien", "helmlok"),
+    async () => await transitions.showWithDissolve("alien", "helmlok"),
+    async () => await transitions.showWithFade("alien", "skully"),
+    async () => await transitions.moveIn("alien", "eggHead", { removeOldComponentWithMoveOut: true }),
+    async () => await transitions.zoomIn("alien", "flowerTop", { removeOldComponentWithZoomOut: true }),
+    async () => await transitions.pushIn("alien", "helmlok"),
 ]);
 
 export const heredityFactorRoute = createRoute({

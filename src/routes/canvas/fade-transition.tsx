@@ -1,22 +1,22 @@
-import { Assets, Game, newLabel, removeWithFade, showWithFade } from "@drincs/pixi-vn";
-import { createRoute } from "@tanstack/react-router";
 import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
+import { Assets, Game, newLabel, transitions } from "@drincs/pixi-vn";
+import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/fade-transition", [
     async () => {
-        await showWithFade("alien", "eggHead", { duration: 5 });
-        await showWithFade("human", {
+        await transitions.showWithFade("alien", "eggHead", { duration: 5 });
+        await transitions.showWithFade("human", {
             value: ["m01-body", "m01-eyes-smile", "m01-mouth-smile00"],
             options: { scale: 0.5, xAlign: 0.7 },
         });
     },
     async () => {
-        await showWithFade("alien", "flowerTop");
-        removeWithFade("human");
+        await transitions.showWithFade("alien", "flowerTop");
+        transitions.removeWithFade("human");
     },
 ]);
 

@@ -1,4 +1,20 @@
-# React + TypeScript + Vite
+# Pixi'VN examples
+
+These examples target **@drincs/pixi-vn v1.9.5**, which has not been released yet.
+Canvas transitions use `transitions` and canvas effects use `effects` from `@drincs/pixi-vn`.
+
+Until v1.9.5 is published, run `npm run build` and `npm pack` in the local Pixi'VN library.
+Then install that package in this project without changing the dependency declared in
+`package.json`:
+
+```sh
+npm install --no-save --package-lock=false /path/to/pixi-vn/drincs-pixi-vn-1.9.5.tgz
+npm run build
+```
+
+After the release, `npm install` will resolve the declared `^1.9.5` dependency normally.
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Biome rules.
 
