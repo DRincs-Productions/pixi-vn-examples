@@ -4,18 +4,22 @@ import { addCanvasComponentsRoute } from "./routes/canvas/add-canvas-components"
 import { addImageContainerRoute } from "./routes/canvas/add-image-container";
 import { addListenerGivenEventRoute } from "./routes/canvas/add-listener-given-event";
 import { alignRoute } from "./routes/canvas/align";
+import { blurinTransitionRoute } from "./routes/canvas/blurin-transition";
 import { dissolveTransitionRoute } from "./routes/canvas/dissolve-transition";
 import { fadeRoute } from "./routes/canvas/fade";
 import { fadeTransitionRoute } from "./routes/canvas/fade-transition";
+import { flashinTransitionRoute } from "./routes/canvas/flashin-transition";
 import { getCanvasComponentsRoute } from "./routes/canvas/get-canvas-components";
 import { heredityFactorRoute } from "./routes/canvas/heredity-factor";
 import { imageSpriteAddRoute } from "./routes/canvas/image-sprite-add";
 import { imageSpriteShowRoute } from "./routes/canvas/image-sprite-show";
+import { irisinTransitionRoute } from "./routes/canvas/irisin-transition";
 import { mirrorRoute } from "./routes/canvas/mirror";
 import { motionSequenceRoute } from "./routes/canvas/motion-sequence";
 import { moveRoute } from "./routes/canvas/move";
 import { moveinTransitionRoute } from "./routes/canvas/movein-transition";
 import { performanceRoute } from "./routes/canvas/performance";
+import { pixelateinTransitionRoute } from "./routes/canvas/pixelatein-transition";
 import { positionWithPercentageRoute } from "./routes/canvas/position-with-percentage";
 import { pushinTransitionRoute } from "./routes/canvas/pushin-transition";
 import { removeAllCanvasComponentsRoute } from "./routes/canvas/remove-all-canvas-components";
@@ -24,8 +28,10 @@ import { rotateRoute } from "./routes/canvas/rotate";
 import { sequenceRoute } from "./routes/canvas/sequence";
 import { shakeRoute } from "./routes/canvas/shake";
 import { showImageContainerRoute } from "./routes/canvas/show-image-container";
+import { splitinTransitionRoute } from "./routes/canvas/splitin-transition";
 import { textCanvasRoute } from "./routes/canvas/text-canvas";
 import { textCanvasStyleRoute } from "./routes/canvas/text-canvas-style";
+import { wipeinTransitionRoute } from "./routes/canvas/wipein-transition";
 import { zoomRoute } from "./routes/canvas/zoom";
 import { zoominTransitionRoute } from "./routes/canvas/zoomin-transition";
 import { choiceMenusRoute } from "./routes/narration/choice-menus";
@@ -97,6 +103,12 @@ const routeTree = rootRoute.addChildren([
     moveinTransitionRoute,
     pushinTransitionRoute,
     zoominTransitionRoute,
+    wipeinTransitionRoute,
+    irisinTransitionRoute,
+    splitinTransitionRoute,
+    flashinTransitionRoute,
+    blurinTransitionRoute,
+    pixelateinTransitionRoute,
     positionWithPercentageRoute,
     alignRoute,
     imageSpriteShowRoute,

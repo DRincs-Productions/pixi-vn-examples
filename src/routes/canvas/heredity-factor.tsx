@@ -30,6 +30,12 @@ export const startLabel = newLabel("canvas/heredity-factor", [
     async () => await transitions.moveIn("alien", "eggHead", { removeOldComponentWithMoveOut: true }),
     async () => await transitions.zoomIn("alien", "flowerTop", { removeOldComponentWithZoomOut: true }),
     async () => await transitions.pushIn("alien", "helmlok"),
+    async () => await transitions.wipeIn("alien", "skully", { angle: 45, softness: 30 }),
+    async () => await transitions.irisIn("alien", "eggHead"),
+    async () => await transitions.splitIn("alien", "flowerTop", { orientation: "horizontal" }),
+    async () => await transitions.flashIn("alien", "helmlok"),
+    async () => await transitions.blurIn("alien", "skully"),
+    async () => await transitions.pixelateIn("alien", "eggHead"),
 ]);
 
 export const heredityFactorRoute = createRoute({
