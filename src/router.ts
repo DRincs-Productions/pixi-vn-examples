@@ -8,6 +8,7 @@ import { blurinTransitionRoute } from "./routes/canvas/blurin-transition";
 import { dissolveTransitionRoute } from "./routes/canvas/dissolve-transition";
 import { fadeRoute } from "./routes/canvas/fade";
 import { fadeTransitionRoute } from "./routes/canvas/fade-transition";
+import { filtersExampleRoute } from "./routes/canvas/filters-example";
 import { flashinTransitionRoute } from "./routes/canvas/flashin-transition";
 import { getCanvasComponentsRoute } from "./routes/canvas/get-canvas-components";
 import { heredityFactorRoute } from "./routes/canvas/heredity-factor";
@@ -109,6 +110,7 @@ const routeTree = rootRoute.addChildren([
     flashinTransitionRoute,
     blurinTransitionRoute,
     pixelateinTransitionRoute,
+    filtersExampleRoute,
     positionWithPercentageRoute,
     alignRoute,
     imageSpriteShowRoute,
