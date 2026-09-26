@@ -9,6 +9,7 @@ import {
     type ImageContainer,
     newLabel,
     showImageContainer,
+    tickers,
 } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
@@ -21,7 +22,7 @@ export const startLabel = newLabel("canvas/show-image-container", [
         });
     },
     () => {
-        canvas.tickers.removeAll();
+        tickers.removeAll();
         canvas.animate<ImageContainer>("james", { xAlign: 0, yAlign: 1 });
     },
 ]);

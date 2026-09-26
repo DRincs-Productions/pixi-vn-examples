@@ -12,6 +12,7 @@ import {
     TickerBase,
     tickerDecorator,
     type TickerValue,
+    tickers,
 } from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
@@ -54,7 +55,7 @@ export const startLabel = newLabel("canvas/performance", [
             args.speed = 2 + Math.random() * 2;
 
             canvas.add(`alien${i}`, dude);
-            canvas.tickers.add(`alien${i}`, new TintingTestTicker(args));
+            tickers.add(`alien${i}`, new TintingTestTicker(args));
         }
     },
 ]);
