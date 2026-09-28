@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
-    "@drincs/pixi-vn": "^1.9.5",
+    "@drincs/pixi-vn": "latest",
     "@drincs/pixi-vn-ink": "latest",
     "@drincs/pixi-vn-live2d": "latest",
     "@drincs/pixi-vn-spine": "latest",

@@ -15,7 +15,7 @@ export const startLabel = newLabel("canvas/wipein-transition", [
         });
     },
     async () => {
-        await transitions.wipeIn("alien", "flowerTop", { angle: 45, softness: 30 });
+        await transitions.wipeIn("alien", "flowerTop", { angle: 45 });
         transitions.wipeOut("human");
     },
 ]);

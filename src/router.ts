@@ -5,13 +5,21 @@ import { addImageContainerRoute } from "./routes/canvas/add-image-container";
 import { addListenerGivenEventRoute } from "./routes/canvas/add-listener-given-event";
 import { alignRoute } from "./routes/canvas/align";
 import { blurinTransitionRoute } from "./routes/canvas/blurin-transition";
+import { blurPulseRoute } from "./routes/canvas/blur-pulse";
+import { bounceRoute } from "./routes/canvas/bounce";
+import { chromaticAberrationRoute } from "./routes/canvas/chromatic-aberration";
+import { desaturateRoute } from "./routes/canvas/desaturate";
 import { dissolveTransitionRoute } from "./routes/canvas/dissolve-transition";
 import { fadeRoute } from "./routes/canvas/fade";
 import { fadeTransitionRoute } from "./routes/canvas/fade-transition";
 import { filtersExampleRoute } from "./routes/canvas/filters-example";
 import { flashinTransitionRoute } from "./routes/canvas/flashin-transition";
 import { getCanvasComponentsRoute } from "./routes/canvas/get-canvas-components";
+import { glitchRoute } from "./routes/canvas/glitch";
+import { glitchinTransitionRoute } from "./routes/canvas/glitchin-transition";
+import { glowPulseRoute } from "./routes/canvas/glow-pulse";
 import { heredityFactorRoute } from "./routes/canvas/heredity-factor";
+import { hopRoute } from "./routes/canvas/hop";
 import { imageSpriteAddRoute } from "./routes/canvas/image-sprite-add";
 import { imageSpriteShowRoute } from "./routes/canvas/image-sprite-show";
 import { irisinTransitionRoute } from "./routes/canvas/irisin-transition";
@@ -19,19 +27,34 @@ import { mirrorRoute } from "./routes/canvas/mirror";
 import { motionSequenceRoute } from "./routes/canvas/motion-sequence";
 import { moveRoute } from "./routes/canvas/move";
 import { moveinTransitionRoute } from "./routes/canvas/movein-transition";
+import { noisedissolveinTransitionRoute } from "./routes/canvas/noisedissolvein-transition";
+import { nodRoute } from "./routes/canvas/nod";
 import { performanceRoute } from "./routes/canvas/performance";
+import { persistentFiltersExampleRoute } from "./routes/canvas/persistent-filters-example";
+import { pinchinTransitionRoute } from "./routes/canvas/pinchin-transition";
 import { pixelateinTransitionRoute } from "./routes/canvas/pixelatein-transition";
 import { positionWithPercentageRoute } from "./routes/canvas/position-with-percentage";
+import { pulseRoute } from "./routes/canvas/pulse";
+import { punchRoute } from "./routes/canvas/punch";
 import { pushinTransitionRoute } from "./routes/canvas/pushin-transition";
+import { radialBlurRoute } from "./routes/canvas/radial-blur";
 import { removeAllCanvasComponentsRoute } from "./routes/canvas/remove-all-canvas-components";
 import { removeCanvasComponentsRoute } from "./routes/canvas/remove-canvas-components";
+import { rippleinTransitionRoute } from "./routes/canvas/ripplein-transition";
 import { rotateRoute } from "./routes/canvas/rotate";
 import { sequenceRoute } from "./routes/canvas/sequence";
 import { shakeRoute } from "./routes/canvas/shake";
+import { shockwaveRoute } from "./routes/canvas/shockwave";
 import { showImageContainerRoute } from "./routes/canvas/show-image-container";
 import { splitinTransitionRoute } from "./routes/canvas/splitin-transition";
+import { swayRoute } from "./routes/canvas/sway";
 import { textCanvasRoute } from "./routes/canvas/text-canvas";
 import { textCanvasStyleRoute } from "./routes/canvas/text-canvas-style";
+import { twistinTransitionRoute } from "./routes/canvas/twistin-transition";
+import { tvinTransitionRoute } from "./routes/canvas/tvin-transition";
+import { vignettePulseRoute } from "./routes/canvas/vignette-pulse";
+import { warpinTransitionRoute } from "./routes/canvas/warpin-transition";
+import { wiggleRoute } from "./routes/canvas/wiggle";
 import { wipeinTransitionRoute } from "./routes/canvas/wipein-transition";
 import { zoomRoute } from "./routes/canvas/zoom";
 import { zoominTransitionRoute } from "./routes/canvas/zoomin-transition";
@@ -111,6 +134,29 @@ const routeTree = rootRoute.addChildren([
     blurinTransitionRoute,
     pixelateinTransitionRoute,
     filtersExampleRoute,
+    persistentFiltersExampleRoute,
+    glitchinTransitionRoute,
+    twistinTransitionRoute,
+    warpinTransitionRoute,
+    rippleinTransitionRoute,
+    noisedissolveinTransitionRoute,
+    tvinTransitionRoute,
+    pinchinTransitionRoute,
+    bounceRoute,
+    pulseRoute,
+    hopRoute,
+    wiggleRoute,
+    nodRoute,
+    swayRoute,
+    punchRoute,
+    glitchRoute,
+    chromaticAberrationRoute,
+    shockwaveRoute,
+    radialBlurRoute,
+    blurPulseRoute,
+    vignettePulseRoute,
+    desaturateRoute,
+    glowPulseRoute,
     positionWithPercentageRoute,
     alignRoute,
     imageSpriteShowRoute,
