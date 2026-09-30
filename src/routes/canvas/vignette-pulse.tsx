@@ -8,7 +8,8 @@ import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/vignette-pulse", [
     async () => {
-        await showImage("background", "bg_grass");
+        await showImage("background", "bg_grass", { scale: 1.3 });
+        await showImage("alien", "eggHead", { align: 0.5 });
     },
     async () => {
         await effects.vignettePulseEffect(CANVAS_APP_GAME_LAYER_ALIAS);
