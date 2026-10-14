@@ -8,7 +8,8 @@ import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/punch", [
     async () => {
-        await showImage("alien", "eggHead");
+        await showImage("bg", "bg_grass", { scale: 1.3 });
+        await showImage("alien", "eggHead", { align: 0.5, anchor: 0.5 });
     },
     async () => {
         await effects.punchEffect("alien");

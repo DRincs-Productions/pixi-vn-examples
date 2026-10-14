@@ -1,7 +1,7 @@
 === start ===
 \# Markdown Test \\n<>
 Hello, this is a test of the markdown parser. Pixi’VN does not manage markdown, but you can implement a markdown parser to display text with markdown syntax. \\n<>
-For example in React, you can use the library [react-markdown](https://www.npmjs.com/package/react-markdown). \\n<>
+For example in React, you can use the library [@tanstack/markdown](https://www.npmjs.com/package/@tanstack/markdown). \\n<>
 \#\# Bold Text \\n<>
 \**This is bold text.** \\n<>
 \#\# Italic Text \\n<>

@@ -2,19 +2,30 @@ import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
-import { Assets, effects, Game, newLabel, showImage } from "@drincs/pixi-vn";
+import {
+    Assets,
+    CANVAS_APP_GAME_LAYER_ALIAS,
+    effects,
+    Game,
+    newLabel,
+    showImage,
+} from "@drincs/pixi-vn";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("canvas/radial-blur", [
     async () => {
-        await showImage("alien", "helmlok");
+        await showImage("bg", "bg_grass", { scale: 1.3 });
+        await showImage("alien", "helmlok", { align: 0.5 });
     },
     async () => {
         await effects.radialBlurEffect("alien");
     },
     async () => {
         await effects.radialBlurEffect("alien", { strength: 0.9, bursts: 2 });
+    },
+    async () => {
+        await effects.radialBlurEffect(CANVAS_APP_GAME_LAYER_ALIAS);
     },
 ]);
 
