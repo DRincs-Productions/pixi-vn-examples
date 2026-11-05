@@ -17,7 +17,7 @@ import { rootRoute } from "../__root";
 export const startLabel = newLabel("animated-sprite/animated-sprite-play-pause", [
     async () => {
         narration.dialogue = "Play the animation";
-        await showAnimatedSprite("fighter", undefined, {
+        await showAnimatedSprite("fighter", {
             anchor: 0.5,
             align: 0.5,
             animationSpeed: 0.4,

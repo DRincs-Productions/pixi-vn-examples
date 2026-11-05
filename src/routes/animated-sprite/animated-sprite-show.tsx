@@ -8,12 +8,12 @@ import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("animated-sprite/animated-sprite-show", [
     async () => {
-        await showAnimatedSprite("explosion", undefined, {
+        await showAnimatedSprite("explosion", {
             anchor: 0.5,
             align: { x: 0.25, y: 0.5 },
             animationSpeed: 0.5,
         });
-        await showAnimatedSprite("fighter", undefined, {
+        await showAnimatedSprite("fighter", {
             anchor: 0.5,
             align: { x: 0.75, y: 0.5 },
             animationSpeed: 0.4,

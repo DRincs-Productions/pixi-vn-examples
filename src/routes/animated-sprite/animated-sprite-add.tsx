@@ -18,7 +18,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-add", [
     () => {
         narration.dialogue =
             "The animated sprite has been added, but its frames are not loaded yet";
-        addAnimatedSprite("fighter", undefined, {
+        addAnimatedSprite("fighter", {
             anchor: 0.5,
             align: 0.5,
             animationSpeed: 0.4,
