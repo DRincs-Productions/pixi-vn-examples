@@ -35,7 +35,7 @@ When adding a new example:
 
 ## Assets: anime style
 
-Local assets live under `src/assets/<folder>/` — AssetPack groups bundles by top-level folder (see `.assetpack.ts`), and a route loads the bundle(s) it needs with `Assets.loadBundle("<folder>")` in its `loader`. Assets used by more than one example (e.g. `src/assets/images/`) go in a shared folder rather than being duplicated per example — duplicating a file under two folders would also register its alias twice, and AssetPack's manifest drops aliases shared by two entries, breaking the alias examples expect (e.g. `"eggHead"`).
+Local assets live under `src/assets/<folder>/` — AssetPack groups bundles by top-level folder (see `.assetpack.ts`), and a route loads the bundle(s) it needs with `Assets.loadBundle("<folder>")` in its `loader`. Assets used by more than one example (e.g. `src/assets/images/`) go in a shared folder rather than being duplicated per example — duplicating a file under two folders would also register its alias twice, and the manifest's alias-dedup logic would rename the second occurrence, breaking the alias examples expect (e.g. `"eggHead"`).
 
 Whenever an image asset needs to be generated for an example, it **must be generated in anime style** (matching Pixi'VN's focus on story-driven games / visual novels), rather than a generic/realistic/other-style illustration.
 
