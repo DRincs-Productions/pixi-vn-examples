@@ -9,8 +9,8 @@
             "pixel-fire"
           ],
           "src": [
-            "animated-sprite/pixel-fire-nAK0SQ.png.json",
-            "animated-sprite/pixel-fire-N3JDag.webp.json"
+            "animated-sprite/pixel-fire-qgXsxw.png.json",
+            "animated-sprite/pixel-fire-PUTqFQ.webp.json"
           ],
           "data": {
             "tags": {}
@@ -27,8 +27,8 @@
             "bgm_cheerful"
           ],
           "src": [
-            "audio/bgm_cheerful-awfeVw.mp3",
-            "audio/bgm_cheerful-0fk3HA.ogg"
+            "audio/bgm_cheerful-k7TlkA.ogg",
+            "audio/bgm_cheerful-awfeVw.mp3"
           ],
           "data": {
             "tags": {}
@@ -40,7 +40,7 @@
             "sfx_whoosh"
           ],
           "src": [
-            "audio/sfx_whoosh-IWWOeA.ogg",
+            "audio/sfx_whoosh-iKuqzA.ogg",
             "audio/sfx_whoosh-Gl8hkw.mp3"
           ],
           "data": {
