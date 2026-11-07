@@ -2,34 +2,31 @@ import BackButton from "@/components/narration/BackButton";
 import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
-import {
-    type AnimatedSprite,
-    addAnimatedSprite,
-    Assets,
-    canvas,
-    Game,
-    narration,
-    newLabel,
-} from "@drincs/pixi-vn";
+import { Assets, canvas, Game, narration, newLabel } from "@drincs/pixi-vn";
+import { type AnimatedSprite, addAnimatedSprite } from "@drincs/pixi-vn/canvas";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
 export const startLabel = newLabel("animated-sprite/animated-sprite-add", [
     () => {
         narration.dialogue =
-            "The animated sprite has been added, but its frames are not loaded yet";
-        addAnimatedSprite("fighter", {
-            anchor: 0.5,
-            align: 0.5,
-            animationSpeed: 0.4,
-        });
+            "The Aseprite animation has been added, but its frames are not loaded yet";
+        addAnimatedSprite(
+            "pixel-fire",
+            {
+                spritesheet: "pixel-fire",
+                animation: "pixel-fire",
+                useFrameDurations: true,
+            },
+            { anchor: 0.5, align: 0.5 },
+        );
     },
     async () => {
         narration.dialogue = "Frames loaded, start playing";
-        const fighter = canvas.find<AnimatedSprite>("fighter");
-        if (fighter) {
-            await fighter.load();
-            fighter.play();
+        const fire = canvas.find<AnimatedSprite>("pixel-fire");
+        if (fire) {
+            await fire.load();
+            fire.play();
         }
     },
 ]);
@@ -39,12 +36,7 @@ export const animatedSpriteAddRoute = createRoute({
     path: "/animated-sprite/animated-sprite-add",
     loader: async ({ context }) => {
         canvas.app.renderer.resize(1440, 960);
-        Assets.add({ alias: "explosion", src: "https://pixijs.com/assets/spritesheet/mc.json" });
-        Assets.add({ alias: "fighter", src: "https://pixijs.com/assets/spritesheet/fighter.json" });
-        Assets.add({
-            alias: "digits",
-            src: "https://pixijs.com/assets/spritesheet/0123456789.json",
-        });
+        await Assets.loadBundle("animated-sprite");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
             await context.queryClient.invalidateQueries();

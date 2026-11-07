@@ -45,11 +45,17 @@
   "devDependencies": {
     "@assetpack/core": "^1.7.0",
     "@biomejs/biome": "^2.5.10",
+    "@drincs/assetpack-plugin-aseprite": "^0.1.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
+  },
+  "overrides": {
+    "@drincs/assetpack-plugin-aseprite": {
+      "sharp": "0.34.5"
+    }
   }
 }
