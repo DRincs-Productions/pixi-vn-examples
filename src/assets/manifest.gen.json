@@ -1,15 +1,37 @@
 {
   "bundles": [
     {
+      "name": "animated-sprite",
+      "assets": [
+        {
+          "alias": [
+            "animated-sprite/pixel-fire.aseprite",
+            "pixel-fire.aseprite",
+            "animated-sprite/pixel-fire",
+            "pixel-fire"
+          ],
+          "src": [
+            "animated-sprite/pixel-fire-zQRF.png.json",
+            "animated-sprite/pixel-fire-iAIy4Q.webp.json"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    },
+    {
       "name": "audio",
       "assets": [
         {
           "alias": [
-            "audio_bgm_cheerful",
+            "audio/bgm_cheerful.wav",
+            "audio/bgm_cheerful",
+            "bgm_cheerful.wav",
             "bgm_cheerful"
           ],
           "src": [
-            "audio/bgm_cheerful-RD1ICg.ogg",
+            "audio/bgm_cheerful-pSfQbw.ogg",
             "audio/bgm_cheerful-awfeVw.mp3"
           ],
           "data": {
@@ -18,11 +40,13 @@
         },
         {
           "alias": [
-            "audio_sfx_whoosh",
+            "audio/sfx_whoosh.wav",
+            "audio/sfx_whoosh",
+            "sfx_whoosh.wav",
             "sfx_whoosh"
           ],
           "src": [
-            "audio/sfx_whoosh-qqbHZg.ogg",
+            "audio/sfx_whoosh-Q0ftIw.ogg",
             "audio/sfx_whoosh-Gl8hkw.mp3"
           ],
           "data": {
@@ -36,7 +60,9 @@
       "assets": [
         {
           "alias": [
-            "images_bg_grass",
+            "images/bg_grass.jpg",
+            "images/bg_grass",
+            "bg_grass.jpg",
             "bg_grass"
           ],
           "src": [
@@ -51,7 +77,9 @@
         },
         {
           "alias": [
-            "images_bunny",
+            "images/bunny.png",
+            "images/bunny",
+            "bunny.png",
             "bunny"
           ],
           "src": [
@@ -66,7 +94,9 @@
         },
         {
           "alias": [
-            "images_eggHead",
+            "images/eggHead.png",
+            "images/eggHead",
+            "eggHead.png",
             "eggHead"
           ],
           "src": [
@@ -81,7 +111,9 @@
         },
         {
           "alias": [
-            "images_flowerTop",
+            "images/flowerTop.png",
+            "images/flowerTop",
+            "flowerTop.png",
             "flowerTop"
           ],
           "src": [
@@ -96,7 +128,9 @@
         },
         {
           "alias": [
-            "images_fm01-body",
+            "images/fm01-body.webp",
+            "images/fm01-body",
+            "fm01-body.webp",
             "fm01-body"
           ],
           "src": [
@@ -109,7 +143,9 @@
         },
         {
           "alias": [
-            "images_fm01-eyes",
+            "images/fm01-eyes.webp",
+            "images/fm01-eyes",
+            "fm01-eyes.webp",
             "fm01-eyes"
           ],
           "src": [
@@ -122,7 +158,9 @@
         },
         {
           "alias": [
-            "images_fm01-mouth",
+            "images/fm01-mouth.webp",
+            "images/fm01-mouth",
+            "fm01-mouth.webp",
             "fm01-mouth"
           ],
           "src": [
@@ -135,7 +173,9 @@
         },
         {
           "alias": [
-            "images_fm02-body",
+            "images/fm02-body.webp",
+            "images/fm02-body",
+            "fm02-body.webp",
             "fm02-body"
           ],
           "src": [
@@ -148,7 +188,9 @@
         },
         {
           "alias": [
-            "images_fm02-eyes",
+            "images/fm02-eyes.webp",
+            "images/fm02-eyes",
+            "fm02-eyes.webp",
             "fm02-eyes"
           ],
           "src": [
@@ -161,7 +203,9 @@
         },
         {
           "alias": [
-            "images_fm02-mouth",
+            "images/fm02-mouth.webp",
+            "images/fm02-mouth",
+            "fm02-mouth.webp",
             "fm02-mouth"
           ],
           "src": [
@@ -174,7 +218,9 @@
         },
         {
           "alias": [
-            "images_helmlok",
+            "images/helmlok.png",
+            "images/helmlok",
+            "helmlok.png",
             "helmlok"
           ],
           "src": [
@@ -189,7 +235,9 @@
         },
         {
           "alias": [
-            "images_m01-body",
+            "images/m01-body.webp",
+            "images/m01-body",
+            "m01-body.webp",
             "m01-body"
           ],
           "src": [
@@ -202,7 +250,9 @@
         },
         {
           "alias": [
-            "images_m01-eyes-smile",
+            "images/m01-eyes-smile.webp",
+            "images/m01-eyes-smile",
+            "m01-eyes-smile.webp",
             "m01-eyes-smile"
           ],
           "src": [
@@ -215,7 +265,9 @@
         },
         {
           "alias": [
-            "images_m01-mouth-smile00",
+            "images/m01-mouth-smile00.webp",
+            "images/m01-mouth-smile00",
+            "m01-mouth-smile00.webp",
             "m01-mouth-smile00"
           ],
           "src": [
@@ -228,7 +280,9 @@
         },
         {
           "alias": [
-            "images_panda",
+            "images/panda.png",
+            "images/panda",
+            "panda.png",
             "panda"
           ],
           "src": [
@@ -243,7 +297,9 @@
         },
         {
           "alias": [
-            "images_skully",
+            "images/skully.png",
+            "images/skully",
+            "skully.png",
             "skully"
           ],
           "src": [
@@ -263,7 +319,9 @@
       "assets": [
         {
           "alias": [
-            "videos_video",
+            "videos/video.mp4",
+            "videos/video",
+            "video.mp4",
             "video"
           ],
           "src": [
