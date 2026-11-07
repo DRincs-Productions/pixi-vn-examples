@@ -1,6 +1,24 @@
 {
   "bundles": [
     {
+      "name": "animated-sprite",
+      "assets": [
+        {
+          "alias": [
+            "animated-sprite_pixel-fire",
+            "pixel-fire"
+          ],
+          "src": [
+            "animated-sprite/pixel-fire-qgXsxw.png.json",
+            "animated-sprite/pixel-fire-PUTqFQ.webp.json"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    },
+    {
       "name": "audio",
       "assets": [
         {
@@ -9,7 +27,7 @@
             "bgm_cheerful"
           ],
           "src": [
-            "audio/bgm_cheerful-RD1ICg.ogg",
+            "audio/bgm_cheerful-k7TlkA.ogg",
             "audio/bgm_cheerful-awfeVw.mp3"
           ],
           "data": {
@@ -22,7 +40,7 @@
             "sfx_whoosh"
           ],
           "src": [
-            "audio/sfx_whoosh-qqbHZg.ogg",
+            "audio/sfx_whoosh-iKuqzA.ogg",
             "audio/sfx_whoosh-Gl8hkw.mp3"
           ],
           "data": {

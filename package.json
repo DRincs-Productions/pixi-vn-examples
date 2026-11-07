@@ -17,7 +17,7 @@
     "@drincs/pixi-vn-spine": "latest",
     "@esotericsoftware/spine-pixi-v8": "latest",
     "@fontsource-variable/inter": "^5.3.0",
-    "@pixi/devtools": "^2.0.1",
+    "@pixi/devtools": "latest",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/markdown": "latest",
@@ -45,6 +45,7 @@
   "devDependencies": {
     "@assetpack/core": "^1.7.0",
     "@biomejs/biome": "^2.5.10",
+    "@drincs/assetpack-plugin-aseprite": "latest",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

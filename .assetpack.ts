@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import type { AssetPackConfig, AssetPipe } from "@assetpack/core";
 import { path } from "@assetpack/core";
+import { aseprite } from "@drincs/assetpack-plugin-aseprite";
 import { pixiPipes } from "@assetpack/core/pixi";
 
 const manifestOutput = "src/assets/manifest.gen.json";
@@ -85,8 +86,11 @@ function normalizeAliases(options: { output: string }): AssetPipe<{ output: stri
 const config: AssetPackConfig = {
     entry: "./src/assets",
     output: "./public/assets",
+    cache: true,
+    cacheLocation: ".assetpack",
     ignore: ["**/*.ts", "**/*.js", "**/*.gen.*"],
     pipes: [
+        aseprite(),
         ...pixiPipes({
             manifest: {
                 output: manifestOutput,

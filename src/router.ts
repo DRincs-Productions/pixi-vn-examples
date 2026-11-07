@@ -95,6 +95,11 @@ import { dialogueGlueRoute } from "./routes/narration/dialogue-glue";
 import { inputPromptRoute } from "./routes/narration/input-prompt";
 import { returningDifferentStepListsRoute } from "./routes/narration/returning-different-step-lists";
 import { soundRoute } from "./routes/sound/sound";
+import { animatedSpriteShowRoute } from "./routes/animated-sprite/animated-sprite-show";
+import { animatedSpriteAddRoute } from "./routes/animated-sprite/animated-sprite-add";
+import { animatedSpritePlayPauseRoute } from "./routes/animated-sprite/animated-sprite-play-pause";
+import { animatedSpriteFramesRoute } from "./routes/animated-sprite/animated-sprite-frames";
+import { animatedSpriteDurationsRoute } from "./routes/animated-sprite/animated-sprite-durations";
 import { videoSpriteAddRoute } from "./routes/video/video-sprite-add";
 import { videoSpriteLoopingRoute } from "./routes/video/video-sprite-looping";
 import { videoSpritePlayPauseRoute } from "./routes/video/video-sprite-play-pause";
@@ -171,6 +176,12 @@ const routeTree = rootRoute.addChildren([
     shakeRoute,
     textCanvasRoute,
     textCanvasStyleRoute,
+    // animated sprite
+    animatedSpriteShowRoute,
+    animatedSpriteAddRoute,
+    animatedSpritePlayPauseRoute,
+    animatedSpriteFramesRoute,
+    animatedSpriteDurationsRoute,
     // video
     videoSpriteShowRoute,
     videoSpriteAddRoute,
