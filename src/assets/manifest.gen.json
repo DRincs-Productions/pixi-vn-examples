@@ -5,14 +5,12 @@
       "assets": [
         {
           "alias": [
-            "animated-sprite_pixel-fire.aseprite",
-            "pixel-fire.aseprite",
             "animated-sprite_pixel-fire",
             "pixel-fire"
           ],
           "src": [
-            "animated-sprite/pixel-fire-zQRF.png.json",
-            "animated-sprite/pixel-fire-iAIy4Q.webp.json"
+            "animated-sprite/pixel-fire-nAK0SQ.png.json",
+            "animated-sprite/pixel-fire-N3JDag.webp.json"
           ],
           "data": {
             "tags": {}
@@ -30,7 +28,7 @@
           ],
           "src": [
             "audio/bgm_cheerful-awfeVw.mp3",
-            "audio/bgm_cheerful-9vS32w.ogg"
+            "audio/bgm_cheerful-0fk3HA.ogg"
           ],
           "data": {
             "tags": {}
@@ -42,7 +40,7 @@
             "sfx_whoosh"
           ],
           "src": [
-            "audio/sfx_whoosh-HUSvhQ.ogg",
+            "audio/sfx_whoosh-IWWOeA.ogg",
             "audio/sfx_whoosh-Gl8hkw.mp3"
           ],
           "data": {

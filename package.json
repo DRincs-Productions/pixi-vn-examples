@@ -52,10 +52,5 @@
     "@vitejs/plugin-react": "^6.1.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
-  },
-  "overrides": {
-    "@drincs/assetpack-plugin-aseprite": {
-      "sharp": "0.34.5"
-    }
   }
 }

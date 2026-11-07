@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import type { AssetPackConfig, AssetPipe } from "@assetpack/core";
 import { path } from "@assetpack/core";
-import { aseprite, asepriteManifestMod } from "@drincs/assetpack-plugin-aseprite";
+import { aseprite } from "@drincs/assetpack-plugin-aseprite";
 import { pixiPipes } from "@assetpack/core/pixi";
 
 const manifestOutput = "src/assets/manifest.gen.json";
@@ -98,8 +98,6 @@ const config: AssetPackConfig = {
             },
         }),
         groupBundlesByFolder({ output: manifestOutput }),
-        // Before normalizeAliases: path.trimExt cannot remove ".aseprite" (too long).
-        asepriteManifestMod({ output: manifestOutput }),
         normalizeAliases({ output: manifestOutput }),
     ],
 };
