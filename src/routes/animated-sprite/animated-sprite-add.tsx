@@ -3,7 +3,7 @@ import ContinueOverlay from "@/components/narration/ContinueOverlay";
 import NarrationScreen from "@/components/narration/NarrationScreen";
 import TextInputDialog from "@/components/narration/TextInputDialog";
 import { Assets, canvas, Game, narration, newLabel } from "@drincs/pixi-vn";
-import { type AnimatedSprite, addAnimatedSprite } from "@drincs/pixi-vn/canvas";
+import { type AnimatedSprite, showAnimatedSprite } from "@drincs/pixi-vn/canvas";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "../__root";
 
@@ -11,7 +11,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-add", [
     () => {
         narration.dialogue =
             "The Aseprite animation has been added, but its frames are not loaded yet";
-        addAnimatedSprite(
+        showAnimatedSprite(
             "pixel-fire",
             {
                 spritesheet: "pixel-fire",

@@ -16,7 +16,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-frames", [
                 spritesheet: "pixel-fire",
                 frames: ["pixel-fire_0", "pixel-fire_4", "pixel-fire_8", "pixel-fire_13"],
             },
-            { anchor: 0.5, align: { x: 0.25, y: 0.5 }, animationSpeed: 0.4 },
+            { align: { x: 0.25, y: 0.1 }, animationSpeed: 0.4 },
         );
         // Explicit per-frame timing overrides the duration stored in the Aseprite file
         await showAnimatedSprite(
@@ -29,7 +29,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-frames", [
                     { texture: "pixel-fire_10", time: 1000 },
                 ],
             },
-            { anchor: 0.5, align: { x: 0.75, y: 0.5 }, scale: 3 },
+            { align: { x: 0.75, y: 0.5 }, scale: 3 },
         );
     },
 ]);
