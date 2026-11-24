@@ -17,7 +17,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-play-pause",
                 animation: "pixel-fire",
                 useFrameDurations: true,
             },
-            { anchor: 0.5, align: 0.5 },
+            { xAlign: 0.5, yAlign: 0.9 },
         );
     },
     () => {
