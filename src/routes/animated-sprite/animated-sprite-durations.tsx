@@ -26,7 +26,7 @@ export const animatedSpriteDurationsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/animated-sprite/animated-sprite-durations",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(480, 320);
+        canvas.app.renderer.resize(720, 480);
         await Assets.loadBundle("animated-sprite");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
