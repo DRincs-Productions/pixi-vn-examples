@@ -17,7 +17,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-durations", 
                 animation: "pixel-fire",
                 useFrameDurations: true,
             },
-            { anchor: 0.5, align: 0.5, scale: 2 },
+            { anchor: 0.5, align: 0.5, scale: 3 },
         );
     },
 ]);

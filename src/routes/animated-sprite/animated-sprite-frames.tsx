@@ -29,7 +29,7 @@ export const startLabel = newLabel("animated-sprite/animated-sprite-frames", [
                     { texture: "pixel-fire_10", time: 1000 },
                 ],
             },
-            { anchor: 0.5, align: { x: 0.75, y: 0.5 }, scale: 2 },
+            { anchor: 0.5, align: { x: 0.75, y: 0.5 }, scale: 3 },
         );
     },
 ]);
