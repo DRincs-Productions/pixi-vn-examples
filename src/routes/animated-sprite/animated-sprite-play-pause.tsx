@@ -42,7 +42,6 @@ export const animatedSpritePlayPauseRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/animated-sprite/animated-sprite-play-pause",
     loader: async ({ context }) => {
-        canvas.app.renderer.resize(240, 160);
         await Assets.loadBundle("animated-sprite");
         Game.onEnd(async () => {
             await Game.start(startLabel, {});
